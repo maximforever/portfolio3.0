@@ -1,8 +1,14 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const NameHeading = styled.h1`
+  font-family: var(--serif-font);
+  font-size: 3rem;
+`
 
 const Header: React.FunctionComponent = () => {
   return (
-    <h1>Max Pekarsky</h1>
+    <NameHeading>Max Pekarsky</NameHeading>
   );
 }
 

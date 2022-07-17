@@ -1,14 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;1,400&family=Vollkorn:wght@400;600&display=swap');
+/*
+  This file is meant for global CSS that affects every base element
+  Individual components should be styled in the component files with styled-components.
+*/
 
-body {
-  margin: none;
-  padding: none;
-
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 300;
+:root {
+  --gray-dark: #343434;
+  --gray-medium: #8a8a8a;
+  --serif-font: 'Vollkorn', serif;
+  --sans-serif-font: 'Montserrat', sans-serif;
 }
 
-h1 {
-  font-family: 'Vollkorn', serif;
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: var(--sans-serif-font);
+  font-weight: 400;
+  background: #f2f2f2;
+  color: var(--gray-dark);
+}
+
+h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
+}
+
+a, a:active, a:visited {
+  text-decoration: none;
+  color: var(--gray-dark);
 }
