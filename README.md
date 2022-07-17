@@ -6,3 +6,8 @@ This is the 3.0 version of my personal portfolio. Its goal is to showcase my pro
 * React (with [create-react-app](https://create-react-app.dev/) toolchain)
 * Typescript
 * [styled-components](https://styled-components.com/)
+
+## Run instructions
+* make sure you have Node installed
+* clone the repo and `npm install`
+* `npm start`
