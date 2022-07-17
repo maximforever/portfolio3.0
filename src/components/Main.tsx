@@ -1,5 +1,5 @@
-import Project from './Project'
-import React from 'react';
+import Project from "./Project";
+import React from "react";
 
 interface Project {
   title: string;
@@ -8,16 +8,13 @@ interface Project {
 }
 
 const Main: React.FunctionComponent<{
-  projects: Project[]
-}> = ({projects}) => {
+  projects: Project[];
+}> = ({ projects }) => {
   const renderProjects = () => {
-    return projects.map(project => {
-      return <Project
-        key={project.id}
-        project={project}
-      />
-    })
-  }
+    return projects.map((project) => {
+      return <Project key={project.id} project={project} />;
+    });
+  };
 
   return (
     <div>
@@ -25,6 +22,6 @@ const Main: React.FunctionComponent<{
       <div>{renderProjects()}</div>
     </div>
   );
-}
+};
 
 export default Main;

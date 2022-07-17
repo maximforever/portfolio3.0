@@ -6,8 +6,8 @@
 :root {
   --gray-dark: #343434;
   --gray-medium: #8a8a8a;
-  --serif-font: 'Vollkorn', serif;
-  --sans-serif-font: 'Montserrat', sans-serif;
+  --serif-font: "Vollkorn", serif;
+  --sans-serif-font: "Montserrat", sans-serif;
 }
 
 body {
@@ -19,11 +19,18 @@ body {
   color: var(--gray-dark);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 600;
 }
 
-a, a:active, a:visited {
+a,
+a:active,
+a:visited {
   text-decoration: none;
   color: var(--gray-dark);
 }
