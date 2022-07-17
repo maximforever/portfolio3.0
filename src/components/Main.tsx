@@ -1,19 +1,12 @@
 import Project from "./Project";
+import { Project as ProjectInterface } from "../types";
 import React from "react";
 
-interface Project {
-  title: string;
-  description: string;
-  id: number;
-}
-
 const Main: React.FunctionComponent<{
-  projects: Project[];
+  projects: ProjectInterface[];
 }> = ({ projects }) => {
   const renderProjects = () => {
-    return projects.map((project) => {
-      return <Project key={project.id} project={project} />;
-    });
+    return projects.map((project, index) => <Project key={index} project={project} />);
   };
 
   return (

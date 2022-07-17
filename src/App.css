@@ -6,14 +6,16 @@
 :root {
   --gray-dark: #343434;
   --gray-medium: #8a8a8a;
-  --serif-font: "Vollkorn", serif;
-  --sans-serif-font: "Montserrat", sans-serif;
+  --font-serif: "Vollkorn", serif;
+  --font-sans-serif: "Montserrat", sans-serif;
+  --font-monospace: "Source Code Pro", monospace;
+  --blue: #2581ef;
 }
 
 body {
   margin: 0px;
   padding: 0px;
-  font-family: var(--sans-serif-font);
+  font-family: var(--font-sans-serif);
   font-weight: 400;
   background: #f2f2f2;
   color: var(--gray-dark);
@@ -32,5 +34,9 @@ a,
 a:active,
 a:visited {
   text-decoration: none;
-  color: var(--gray-dark);
+  color: var(--blue);
+}
+
+a:hover {
+  text-decoration: underline;
 }

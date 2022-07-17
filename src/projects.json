@@ -1,22 +1,32 @@
 [
   {
-    "title": "foo",
-    "description": "bar",
-    "id": 1
+    "title": "Hackterms",
+    "link": "https://www.hackterms.com",
+    "description": "Hackterms is the urban dictionary for programming terms. I built it and grew it to 1300 definitions from over a thousand contributors.",
+    "stack": ["Node.js", "Express", "jQuery", "Handlebars.js", "MongoDB", "OAuth"]
   },
   {
-    "title": "foo2",
-    "description": "bar2",
-    "id": 2
+    "title": "GemFM",
+    "link": "https://www.gem.fm",
+    "description": "GemFM is a recommendation engine for great podcast episodes powered by the Spotify and iTunes APIs. Users can rate",
+    "stack": ["Rails", "React.js", "TypeScript", "Redux", "styled-components", "PostgreSQL"]
   },
   {
-    "title": "foo3",
-    "description": "bar3",
-    "id": 3
+    "title": "TinyLogger",
+    "link": "https://www.tinylogger.com",
+    "description": "TinyLogger is a minimal, distraction-free blogging platform. It centers around a clean interface that allows user to focus on writing. Everything autosaves as the user types, and additional tools appear on hover.",
+    "stack": ["Node.js", "Express", "Vue.js", "MongoDB"]
   },
   {
-    "title": "foo4",
-    "description": "bar4",
-    "id": 4
+    "title": "Trakr",
+    "link": "https://www.mytrakr.app",
+    "description": "Named after a heroic 9/11 dog, Trakr is a personal budgeting app. Users can enter and tag expenses, review a monthly dashboard, and see charts and graphs of their spending anaytics.",
+    "stack": ["Rails", "React.js", "OAuth", "Victory Charts", "PostgreSQL"]
+  },
+  {
+    "title": "MaximPekarsky.com",
+    "link": "https://www.maximpekarsky.com",
+    "description": "This portfolio is built with server-side rendered React.js, TypeScript, and styled-components",
+    "stack": ["React.js", "TypeScript", "styled-components"]
   }
 ]
