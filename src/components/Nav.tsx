@@ -5,6 +5,11 @@ const Navigation = styled.ul`
   display: flex;
   margin: 0px;
   padding: 0px;
+  padding-bottom: 1.5rem;
+
+  @media only screen and (min-width: 768px) {
+    padding-bottom: 3rem;
+  }
 `;
 
 const NavItem = styled.li`
@@ -16,17 +21,18 @@ const NavItem = styled.li`
     color: var(--gray-medium);
   }
 `;
+
 const Nav: React.FunctionComponent = () => {
   return (
     <Navigation>
       <NavItem>
-        <a href="#">Home</a>
+        <a href="/about">Home</a>
       </NavItem>
       <NavItem>
-        <a href="#">Projects</a>
+        <a href="/projects">Projects</a>
       </NavItem>
       <NavItem>
-        <a href="#">Writing</a>
+        <a href="writing">Writing</a>
       </NavItem>
       <NavItem>
         <a href="#">Blog</a>
