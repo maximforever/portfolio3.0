@@ -1,0 +1,17 @@
+[
+  {
+    "title": "StackOverflow Blog: Does your web app need a front-end framework?",
+    "link": "https://stackoverflow.blog/2020/02/03/is-it-time-for-a-front-end-framework/",
+    "description": "You’ve likely heard about front-end frameworks. Names like React, Vue, and Angular abound in tutorials and Hacker News debates. If you’ve wondered why and when these frameworks are used and whether it’s time you implement one in your project, you’re not alone."
+  },
+  {
+    "title": "StackOverflow Blog: WebSockets for fun and profit",
+    "link": "https://stackoverflow.blog/2019/12/18/websockets-for-fun-and-profit/",
+    "description": "Seamless communication is a must on the modern web. As internet speeds increase, we expect our data in real time. To address this need, WebSocket, a popular communication protocol finalized in 2011, enables websites to send and receive data without delay."
+  },
+  {
+    "title": "Bonusly Blog: How to Connect with Your Remote Team and Build Culture",
+    "link": "https://blog.bonus.ly/engaging-remote-employees",
+    "description": "Although most of our colleagues work from home one or two days a week, Bonusly made the jump to a fully remote workforce two weeks ago as the COVID-19 crisis hit. Informed by our own experience, I wanted to share some thoughts on how gratitude and recognition can help your remote team stay connected and engaged."
+  }
+]
