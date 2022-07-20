@@ -4,3 +4,5 @@ export interface Project {
   description: string;
   stack?: string[];
 }
+
+export type Page = "initial" | "about" | "projects" | "writing";
