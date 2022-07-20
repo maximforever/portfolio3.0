@@ -18,7 +18,7 @@ const Heading = styled.h1`
 
 const Subheading = styled.h2`
   font-size: 1.2rem;
-  font-weight: 400;
+  font-weight: 300;
   margin: 0;
 `
 

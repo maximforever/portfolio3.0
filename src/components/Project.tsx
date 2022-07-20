@@ -12,21 +12,24 @@ const Project = styled.div`
 
 const Title = styled.h3`
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   margin: 0;
   padding-bottom: 0.5rem;
+  font-family: var(--font-sans-serif);
 `;
 
 const Description = styled.p`
-  color: #525252;
+  color: #8c8c8c;
   margin: 0;
   padding-bottom: 0.5rem;
+  line-height: 1.6;
 `;
 
 const Link = styled.a`
   font-weight: 600;
   padding-bottom: 1rem;
   display: block;
+  overflow-wrap: break-word;
 `
 
 const Tag = styled.div`

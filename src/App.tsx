@@ -1,10 +1,12 @@
 import "./App.css";
+import { BrowserRouter, Route, Routes  } from "react-router-dom";
 import Header from "./components/Header";
 import Main from "./components/Main";
 import Nav from "./components/Nav";
 import React from "react";
 import projects from "./projects.json";
 import styled from "styled-components";
+import writing from "./writing.json";
 
 const AppWrapper = styled.div`
 margin: 5vw auto;
@@ -19,11 +21,21 @@ width: 90vw;
 `
 
 function App() {
+  const renderNav = () => {
+    return <Nav />
+  }
+
   return (
     <AppWrapper className="App">
       <Header />
-      <Nav />
-      <Main projects={projects} />
+      {renderNav()}
+      <BrowserRouter>
+        <Routes>
+          <Route path="about" element={<Main page={"about"}/>} />
+          <Route path="projects" element={<Main projects={projects} page={"projects"}/>} />
+          <Route path="writing" element={<Main projects={writing} page={"writing"}/>} />
+        </Routes>
+      </BrowserRouter>
     </AppWrapper>
   );
 }
