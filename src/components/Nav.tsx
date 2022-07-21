@@ -1,7 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
-const Navigation = styled.ul`
+const Navigation = styled.ul<{open: boolean}>`
+  opacity: ${(props) => props.open ? 1 : 0};
+  transition: opacity var(--transition-time);
   display: flex;
   margin: 0px;
   padding: 0px;
@@ -14,19 +16,23 @@ const Navigation = styled.ul`
 
 const NavItem = styled.li`
   list-style: none;
-  margin-right: 1rem;
+  padding-right: 1rem;
   font-weight: 600;
 
   > a {
     color: var(--gray-medium);
   }
+
+  @media only screen and (min-width: 768px) {
+    padding-right: 3rem;
+  }
 `;
 
-const Nav: React.FunctionComponent = () => {
+const Nav: React.FunctionComponent<{open: boolean}> = ({open}) => {
   return (
-    <Navigation>
+    <Navigation open={open}>
       <NavItem>
-        <a href="/about">Home</a>
+        <a href="/about">About</a>
       </NavItem>
       <NavItem>
         <a href="/projects">Projects</a>

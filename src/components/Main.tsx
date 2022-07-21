@@ -1,19 +1,19 @@
-import { Page as PageType, Project as ProjectInterface } from "../types";
+import React, { useEffect } from "react";
 import AboutMe from "./AboutMe"
 import Project from "./Project";
-import React from "react";
+import { Project as ProjectInterface } from "../types";
 
 const Main: React.FunctionComponent<{
   projects?: ProjectInterface[],
-  page: PageType,
-}> = ({ projects, page }) => {
+  open?: boolean,
+}> = ({ projects, open }) => {
   const renderProjects = () => {
     if (!projects) { return null }
     return projects.map((project, index) => <Project key={index} project={project} />);
   };
 
-  if (page === "about") {
-    return <AboutMe />
+  if (open) {
+    return <AboutMe open={open}/>
   } else {
     return <div>{renderProjects()}</div>
   }

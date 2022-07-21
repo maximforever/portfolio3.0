@@ -10,13 +10,15 @@
   --font-sans-serif: "Montserrat", sans-serif;
   --font-monospace: "Source Code Pro", monospace;
   --blue: #2b9cce;
+
+  --transition-time: 0.7s;
 }
 
 body {
   margin: 0px;
   padding: 0px;
   font-family: var(--font-sans-serif);
-  font-weight: 400;
+  font-weight: 500;
   background: #fcfcfc;
   color: var(--gray-dark);
 }

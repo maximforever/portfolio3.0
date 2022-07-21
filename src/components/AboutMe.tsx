@@ -1,9 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 
-const AboutWrapper = styled.div`
+const AboutWrapper = styled.div<{open: boolean}>`
   line-height: 1.6;
   font-size: 1.1rem;
+  opacity: ${(props) => props.open ? 1 : 0};
+  overflow: hidden;
+  max-height: ${(props) => props.open ? "initial" : "0px"};
+  transition: opacity calc(var(--transition-time) * 2);
 
   > p {
     margin: 0;
@@ -11,9 +15,9 @@ const AboutWrapper = styled.div`
   }
 `
 
-const AboutMe: React.FunctionComponent = () => {
+const AboutMe: React.FunctionComponent<{open: boolean}> = ({open}) => {
   return (
-    <AboutWrapper>
+    <AboutWrapper open={open}>
       <p>
         I&apos;m a product-driven full-stack web developer and empathetic writer and communicator.
         I am currently working on <a href="https://www.executeprogram.com" target="_blank" rel="nofollow noreferrer"> Execute Program</a> and writing for the <a href="https://stackoverflow.blog/authors/maxpekarsky/" target="_blank" rel="nofollow noreferrer"> StackOverflow blog</a>.
