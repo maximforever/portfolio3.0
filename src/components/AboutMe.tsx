@@ -2,7 +2,13 @@ import React from "react";
 import styled from "styled-components";
 
 const AboutWrapper = styled.div`
-  line-height: 1.5;
+  line-height: 1.6;
+  font-size: 1.1rem;
+
+  > p {
+    margin: 0;
+    padding-bottom: 1rem;
+  }
 `
 
 const AboutMe: React.FunctionComponent = () => {
@@ -18,7 +24,7 @@ const AboutMe: React.FunctionComponent = () => {
         I am comfortable in <em> JavaScript, Ruby, Node.js, Rails, and React</em>, and always enjoy learning new technologies. In addition to my engineering work, I love being involved with my team&apos;s learning and development, developer experience, and hiring process.
       </p>
       <p>
-        When I&apos;m not coding for work, I&apos;m always building the next cool thing. My latest projects are <a href="https://www.gem.fm" target="_blank" rel="nofollow noreferrer"> GemFM</a>, a podcast episode recommendation app, <a href="https://www.hackterms.com" target="_blank" rel="nofollow noreferrer"> Hackterms</a>, the Urban Dictionary for programming terms, and  <a href="https://www.tinylogger.com" target="_blank" rel="nofollow noreferrer"> Tinylogger</a>, a minimal blogging platform.
+        When I&apos;m not coding for work, I&apos;m always building the next cool thing. My latest projects are <a href="https://www.gem.fm" target="_blank" rel="nofollow noreferrer"> GemFM</a>, a podcast episode recommendation app, <a href="https://www.hackterms.com" target="_blank" rel="nofollow noreferrer"> Hackterms</a>, the Urban Dictionary for programming terms, and  <a href="https://www.tinylogger.com" target="_blank" rel="nofollow noreferrer"> Tiny Logger</a>, a minimal blogging platform.
       </p>
     </AboutWrapper>
   )

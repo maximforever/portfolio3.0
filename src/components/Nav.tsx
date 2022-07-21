@@ -5,10 +5,10 @@ const Navigation = styled.ul`
   display: flex;
   margin: 0px;
   padding: 0px;
-  padding-bottom: 1.5rem;
+  padding-bottom: 3rem;
 
   @media only screen and (min-width: 768px) {
-    padding-bottom: 3rem;
+    padding-bottom: 5rem;
   }
 `;
 
@@ -35,7 +35,10 @@ const Nav: React.FunctionComponent = () => {
         <a href="writing">Writing</a>
       </NavItem>
       <NavItem>
-        <a href="#">Blog</a>
+        <a href="https://www.tinylogger.com/max" target="_blank" rel="nofollow noreferrer">Blog</a>
+      </NavItem>
+      <NavItem>
+        <a href="#">Resume</a>
       </NavItem>
     </Navigation>
   );

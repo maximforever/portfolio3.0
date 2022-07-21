@@ -12,7 +12,7 @@
     "stack": ["Rails", "React.js", "TypeScript", "Redux", "styled-components", "PostgreSQL"]
   },
   {
-    "title": "TinyLogger",
+    "title": "Tiny Logger",
     "link": "https://www.tinylogger.com",
     "description": "TinyLogger is a minimal, distraction-free blogging platform. It centers around a clean interface that allows user to focus on writing. Everything autosaves as the user types, and additional tools appear on hover.",
     "stack": ["Node.js", "Express", "Vue.js", "MongoDB"]

@@ -9,7 +9,7 @@
   --font-serif: "Vollkorn", serif;
   --font-sans-serif: "Montserrat", sans-serif;
   --font-monospace: "Source Code Pro", monospace;
-  --blue: #2581ef;
+  --blue: #2b9cce;
 }
 
 body {
@@ -35,6 +35,7 @@ a:active,
 a:visited {
   text-decoration: none;
   color: var(--blue);
+  font-weight: 600;
 }
 
 a:hover {
