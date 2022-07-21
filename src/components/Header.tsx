@@ -4,8 +4,8 @@ import styled from "styled-components";
 const HeaderWrapper = styled.div<{open: boolean}>`
   display: block;
   padding-bottom: 1.5rem;
-
-  padding-top: ${(props) => props.open ? '0px' : '25vh'};
+  text-align: ${(props) => props.open ? 'left' : 'center'};
+  padding-top: ${(props) => props.open ? '0px' : '35vh'};
   transition: padding-top var(--transition-time);
 
   &:active, &:visited {
@@ -16,6 +16,11 @@ const HeaderWrapper = styled.div<{open: boolean}>`
     cursor: pointer;
     text-decoration: none;
     color: var(--blue);
+  }
+
+  @media only screen and (min-width: 768px) {
+    padding-top: ${(props) => props.open ? '0px' : '25vh'};
+    text-align: left;
   }
 `
 

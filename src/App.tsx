@@ -9,10 +9,10 @@ import styled from "styled-components";
 import writing from "./writing.json";
 
 const AppWrapper = styled.div`
-margin: 5vw auto;
-width: 90vw;
+margin: 5vw;
 
 @media only screen and (min-width: 768px) {
+  margin: 5vw 0;
   margin-left: 4rem;
   margin-top: 2rem;
   width: 90%;

@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const AboutWrapper = styled.div<{open: boolean}>`
   line-height: 1.6;
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   opacity: ${(props) => props.open ? 1 : 0};
   overflow: hidden;
   max-height: ${(props) => props.open ? "initial" : "0px"};
@@ -12,6 +12,10 @@ const AboutWrapper = styled.div<{open: boolean}>`
   > p {
     margin: 0;
     padding-bottom: 1rem;
+  }
+
+  @media only screen and (min-width: 768px) {
+    font-size: 1.1rem;
   }
 `
 
