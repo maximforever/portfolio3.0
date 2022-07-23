@@ -36,10 +36,14 @@ function App() {
 
   const [open, setOpen] = useState<boolean>(pageState());
 
+  const setToOpen = (newState: boolean) => {
+    setOpen(newState)
+  }
+
   return (
     <AppWrapper className="App">
-      <Header open={open} setOpen={(newState: boolean) => setOpen(newState)} />
-      <Nav open={open}/>
+      <Header open={open} setOpen={(newState: boolean) => setToOpen(newState)} />
+      <Nav open={open} />
       <Routes>
         <Route path="/" element={<Main open={open} />} />
         <Route path="about" element={<Main open={open} />} />
