@@ -1,12 +1,13 @@
 import React from "react";
+import finger from "../assets/finger.svg"
 import styled from "styled-components";
 
 const HeaderWrapper = styled.div<{open: boolean}>`
   display: block;
-  padding-bottom: 1.5rem;
   text-align: ${(props) => props.open ? 'left' : 'center'};
   padding-top: ${(props) => props.open ? '0px' : '35vh'};
   transition: padding-top var(--transition-time);
+  user-select: none;
 
   &:active, &:visited {
     color: var(--gray-dark);
@@ -19,7 +20,7 @@ const HeaderWrapper = styled.div<{open: boolean}>`
   }
 
   @media only screen and (min-width: 768px) {
-    padding-top: ${(props) => props.open ? '0px' : '25vh'};
+    padding-top: ${(props) => props.open ? '0px' : '32vh'};
     text-align: left;
   }
 `
@@ -48,6 +49,20 @@ const Subheading = styled.h2<{open: boolean}>`
   }
 `
 
+const Finger = styled.img<{open: boolean}>`
+  height: 1.6rem;
+  padding-top: 1rem;
+  padding-left: 48%;
+  display: ${(props) => props.open ? "none" : "block"};
+  filter: opacity(0.2);
+
+  @media only screen and (min-width: 768px) {
+    padding-left: 12rem;
+    padding-top: 1rem;
+    height: 2rem;
+  }
+`
+
 interface PropsInterface {
   open: boolean;
   setOpen: (newState: boolean) => void;
@@ -68,6 +83,7 @@ const Header: React.FunctionComponent<PropsInterface> = ({open, setOpen}) => {
     <HeaderWrapper open={open} onClick={handleClick}>
       <Heading open={open}>Max Pekarsky</Heading>
       <Subheading open={open}>full-stack product engineer</Subheading>
+      <Finger open={open} src={finger}/>
     </HeaderWrapper>
   );
 };
