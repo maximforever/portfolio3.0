@@ -6,7 +6,7 @@ const Project = styled.div`
   padding-bottom: 3rem;
 
   @media only screen and (min-width: 768px) {
-    padding-bottom: 6rem;
+    padding-bottom: 4rem;
   }
 `;
 
