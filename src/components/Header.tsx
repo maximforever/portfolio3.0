@@ -97,7 +97,7 @@ const Header: React.FunctionComponent<PropsInterface> = ({open, setOpen}) => {
     <HeaderWrapper open={open} onClick={handleClick}>
       <Heading open={open}>Max Pekarsky</Heading>
       <Subheading open={open}>full-stack product engineer</Subheading>
-      <Finger open={open} src={finger}/>
+      <Finger open={open} src={finger} alt="bouncing finger icon that encourage the user to click on the header and reveal the about me"/>
     </HeaderWrapper>
   );
 };
