@@ -12,15 +12,17 @@ const Navigation = styled.ul<{open: boolean}>`
   padding: 0px;
   padding: 3rem 0;
   user-select: none;
+  font-size: 0.9rem;
 
   @media only screen and (min-width: 768px) {
     padding: 4rem 0;
+    font-size: 1rem;
   }
 `;
 
 const NavItem = styled.li<{active?: boolean}>`
   list-style: none;
-  padding-right: 0.5rem;
+  padding-right: 0.7rem;
   font-weight: 600;
 
   > a {

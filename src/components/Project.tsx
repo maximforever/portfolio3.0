@@ -22,14 +22,24 @@ const Description = styled.p`
   color: #717171;
   margin: 0;
   padding-bottom: 0.5rem;
-  line-height: 1.6;
+  line-height: 1.8;
+  font-size: 0.9rem;
+
+  @media only screen and (min-width: 768px) {
+    font-size: 1rem;
+  }
 `;
 
-const Link = styled.a`
+const ProjectLink = styled.a`
   font-weight: 600;
   padding-bottom: 1rem;
   display: block;
   overflow-wrap: break-word;
+  font-size: 0.9rem;
+
+  @media only screen and (min-width: 768px) {
+    font-size: 1rem;
+  }
 `
 
 const Tag = styled.div`
@@ -41,7 +51,11 @@ const Tag = styled.div`
   padding: 0rem 0.6rem;
   margin-right: 0.8rem;
   margin-bottom: 0.4rem;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
+
+  @media only screen and (min-width: 768px) {
+    font-size: 0.9rem;
+  }
 `
 
 const TagWrapper = styled.div`
@@ -61,7 +75,7 @@ const Nav: React.FunctionComponent<{ project: ProjectInterface }> = ({ project }
     <Project>
       <Title>{project.title}</Title>
       <Description>{project.description}</Description>
-      <Link href={project.link} target="_blank" rel="noopener noreferrer">{project.link}</Link>
+      <ProjectLink href={project.link} target="_blank" rel="noopener noreferrer">{project.link}</ProjectLink>
       <TagWrapper>{renderStack()}</TagWrapper>
     </Project>
   );
