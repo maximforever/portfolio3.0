@@ -4,6 +4,7 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import Header from "./components/Header";
 import Main from "./components/Main";
 import Nav from "./components/Nav";
+import NotFound from "./components/NotFound";
 import projects from "./projects.json";
 import styled from "styled-components";
 import writing from "./writing.json";
@@ -58,6 +59,7 @@ function App() {
           path="writing"
           element={<Main open={open} projects={writing} />}
         />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </AppWrapper>
   );
