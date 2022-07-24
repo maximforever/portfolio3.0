@@ -52,15 +52,26 @@ const Subheading = styled.h2<{open: boolean}>`
 
 const Finger = styled.img<{open: boolean}>`
   height: 1.6rem;
-  padding-top: 1rem;
+  padding-top: 1.5rem;
   padding-left: 48%;
   display: ${(props) => props.open ? "none" : "block"};
-  filter: opacity(0.2);
+  filter: opacity(0.15);
+
+  animation-duration: 8s;
+  animation-name: bounce;
+  animation-iteration-count: infinite;
 
   @media only screen and (min-width: 768px) {
     padding-left: 12rem;
-    padding-top: 1rem;
     height: 2rem;
+  }
+
+  @keyframes bounce {
+    20%  { margin-top: 0px; }
+    23% { margin-top: -0.3rem; }
+    26% { margin-top: 0px; }
+    29% { margin-top: -0.3rem; }
+    32% { margin-top: 0px; }
   }
 `
 
