@@ -5,15 +5,17 @@ import { Project as ProjectInterface } from "../types";
 
 const Main: React.FunctionComponent<{
   projects?: ProjectInterface[],
-  open?: boolean,
+  open: boolean,
 }> = ({ projects, open }) => {
   const renderProjects = () => {
-    if (!projects) { return null }
+    if (projects === undefined) { return null }
     return projects.map((project, index) => <Project key={index} project={project} />);
   };
 
-  if (open) {
-    return <AboutMe open={open}/>
+  if (!open) {
+    return null;
+  } else if (projects === undefined) {
+    return <AboutMe open={open} />
   } else {
     return <div>{renderProjects()}</div>
   }

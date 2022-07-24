@@ -20,11 +20,12 @@ const Navigation = styled.ul<{open: boolean}>`
 
 const NavItem = styled.li<{active?: boolean}>`
   list-style: none;
-  padding-right: 1rem;
+  padding-right: 0.5rem;
   font-weight: 600;
 
   > a {
-    color: ${(props) => props.active ? 'greeen' : 'var(--gray-medium)'};
+    color: ${(props) => props.active ? 'var(--blue)' : 'var(--gray-medium)'};
+    text-decoration: ${(props) => props.active ? 'underline' : 'none'};
   }
 
   @media only screen and (min-width: 768px) {
@@ -32,12 +33,9 @@ const NavItem = styled.li<{active?: boolean}>`
   }
 `;
 
-const Nav: React.FunctionComponent<{open: boolean}> = ({open}) => {
-  const location = useLocation();
-  console.log(location.pathname);
-
+const Nav: React.FunctionComponent<{open: boolean, currentPath: string}> = ({open, currentPath}) => {
   const isPage = (pathname: string) => {
-    return pathname === location.pathname;
+    return pathname === currentPath;
   }
 
   return (

@@ -1,6 +1,7 @@
 import React from "react";
 import finger from "../assets/finger.svg"
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 const HeaderWrapper = styled.div<{open: boolean}>`
   display: block;
@@ -69,13 +70,15 @@ interface PropsInterface {
 }
 
 const Header: React.FunctionComponent<PropsInterface> = ({open, setOpen}) => {
+  const navigate = useNavigate();
+
   const handleClick = () => {
     setOpen(!open);
 
     if(!open){
-      window.history.replaceState(null, "About Max", "/about")
+      navigate("/about");
     } else {
-      window.history.replaceState(null, "Max Pekarsky: Product Engineer", "/")
+      navigate("/");
     }
   }
 
