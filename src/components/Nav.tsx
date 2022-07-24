@@ -1,7 +1,6 @@
 import React from "react";
 import Resume from "../assets/Max_Pekarsky_Resume.pdf"
 import styled from "styled-components";
-import { useLocation } from "react-router-dom";
 
 const Navigation = styled.ul<{open: boolean}>`
   opacity: ${(props) => props.open ? 1 : 0};
