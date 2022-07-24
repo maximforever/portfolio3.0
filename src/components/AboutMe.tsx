@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const AboutWrapper = styled.div<{open: boolean}>`
-  line-height: 1.6;
+  line-height: 1.8;
   font-size: 0.9rem;
   opacity: ${(props) => props.open ? 1 : 0};
   overflow: hidden;
