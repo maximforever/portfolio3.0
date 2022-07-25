@@ -22,7 +22,7 @@ const AppWrapper = styled.div`
   }
 `;
 
-function App() {
+const App: React.FunctionComponent = () => {
   const location = useLocation();
   const pageState = () => {
     switch (location.pathname) {
@@ -36,15 +36,20 @@ function App() {
   };
 
   const [open, setOpen] = useState<boolean>(pageState());
-  const [darkMode, setDarkMode] = useState<boolean>(false);
+  const [darkMode, setDarkMode] = useState<boolean>(pageState());
+
+  const toggleDarkMode = () => {
+    console.log(`switching dark mode to: ${!darkMode}`);
+    setDarkMode(!darkMode);
+  }
 
   const setToOpen = (newState: boolean) => {
     setOpen(newState);
   };
 
   return (
-    <AppWrapper className="App">
-      <DarkModeToggle darkMode={darkMode} changeMode={() => setDarkMode(!darkMode)}/>
+    <AppWrapper className={`App ${darkMode ? 'dark-mode': ''}`}>
+      <DarkModeToggle darkMode={darkMode} changeMode={() => toggleDarkMode()} />
       <Header
         open={open}
         setOpen={(newState: boolean) => setToOpen(newState)}

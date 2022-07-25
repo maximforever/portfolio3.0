@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 const HeaderWrapper = styled.div<{open: boolean}>`
   display: block;
   text-align: ${(props) => props.open ? 'left' : 'center'};
-  padding-top: ${(props) => props.open ? '0px' : '35vh'};
+  margin-top: ${(props) => props.open ? '0px' : '35vh'};
   transition: padding-top var(--transition-time);
   user-select: none;
 
@@ -21,7 +21,7 @@ const HeaderWrapper = styled.div<{open: boolean}>`
   }
 
   @media only screen and (min-width: 768px) {
-    padding-top: ${(props) => props.open ? '0px' : '32vh'};
+    margin-top: ${(props) => props.open ? '0px' : '32vh'};
     text-align: left;
   }
 `
@@ -41,7 +41,7 @@ const Heading = styled.h1<{open: boolean}>`
 
 const Subheading = styled.h2<{open: boolean}>`
   font-size: ${(props) => props.open ? '1rem' : '1.3em'};
-  font-weight: 400;
+  font-weight: 300;
   margin: 0;
   transition: font-size var(--transition-time);
 
