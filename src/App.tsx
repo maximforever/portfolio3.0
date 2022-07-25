@@ -1,6 +1,7 @@
 import "./App.css";
 import React, { useState } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
+import DarkModeToggle from "./components/DarkModeToggle";
 import Header from "./components/Header";
 import Main from "./components/Main";
 import Nav from "./components/Nav";
@@ -23,7 +24,6 @@ const AppWrapper = styled.div`
 
 function App() {
   const location = useLocation();
-
   const pageState = () => {
     switch (location.pathname) {
       case "/":
@@ -36,6 +36,7 @@ function App() {
   };
 
   const [open, setOpen] = useState<boolean>(pageState());
+  const [darkMode, setDarkMode] = useState<boolean>(false);
 
   const setToOpen = (newState: boolean) => {
     setOpen(newState);
@@ -43,6 +44,7 @@ function App() {
 
   return (
     <AppWrapper className="App">
+      <DarkModeToggle darkMode={darkMode} changeMode={() => setDarkMode(!darkMode)}/>
       <Header
         open={open}
         setOpen={(newState: boolean) => setToOpen(newState)}

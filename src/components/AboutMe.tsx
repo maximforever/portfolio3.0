@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 
-const AboutWrapper = styled.div<{open: boolean}>`
-  visibility: ${(props) => props.open ? 'initial' : 'hidden' };
+const AboutWrapper = styled.div<{ open: boolean }>`
+  visibility: ${(props) => props.open ? 'initial' : 'hidden'};
   line-height: 1.8;
   font-size: 0.9rem;
-  opacity: ${(props) => props.open ? 1 : 0 };
+  opacity: ${(props) => props.open ? 1 : 0};
   overflow: hidden;
-  max-height: ${(props) => props.open ? '100vh' : '0vh' };
+  max-height: ${(props) => props.open ? '100vh' : '0vh'};
   transition: opacity 1s, max-height 2s;
 
   > p {
@@ -20,7 +20,7 @@ const AboutWrapper = styled.div<{open: boolean}>`
   }
 `
 
-const AboutMe: React.FunctionComponent<{open: boolean}> = ({open}) => {
+const AboutMe: React.FunctionComponent<{ open: boolean }> = ({ open }) => {
   return (
     <AboutWrapper open={open}>
       <p>
