@@ -2,12 +2,13 @@ import React from "react";
 import styled from "styled-components";
 
 const AboutWrapper = styled.div<{open: boolean}>`
+  visibility: ${(props) => props.open ? 'initial' : 'hidden' };
   line-height: 1.8;
   font-size: 0.9rem;
-  opacity: ${(props) => props.open ? 1 : 0};
+  opacity: ${(props) => props.open ? 1 : 0 };
   overflow: hidden;
-  max-height: ${(props) => props.open ? "initial" : "0px"};
-  transition: opacity calc(var(--transition-time) * 2);
+  max-height: ${(props) => props.open ? '100vh' : '0vh' };
+  transition: opacity 1s, max-height 2s;
 
   > p {
     margin: 0;
