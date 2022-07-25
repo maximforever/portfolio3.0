@@ -6,27 +6,36 @@ const Navigation = styled.ul<{open: boolean}>`
   opacity: ${(props) => props.open ? 1 : 0};
   visibility: ${(props) => props.open ? "initial" : "hidden"};
   display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  line-height: 2;
   transition: opacity var(--transition-time);
   margin: 0px;
-  padding: 0px;
-  padding: 3rem 0;
+  padding: 2rem 0 3rem 0;
   user-select: none;
   font-size: 0.9rem;
 
+  @media only screen and (min-width: 512px) {
+    justify-content: flex-start;
+  }
+
   @media only screen and (min-width: 768px) {
-    padding: 4rem 0;
+    padding: 2rem 0 4rem 0;
     font-size: 1rem;
   }
 `;
 
 const NavItem = styled.li<{active?: boolean}>`
   list-style: none;
-  padding-right: 0.7rem;
   font-weight: 600;
 
   > a {
     color: ${(props) => props.active ? 'var(--blue)' : 'var(--gray-medium)'};
     text-decoration: ${(props) => props.active ? 'underline' : 'none'};
+  }
+
+  @media only screen and (min-width: 512px) {
+    padding-right: 2rem;
   }
 
   @media only screen and (min-width: 768px) {

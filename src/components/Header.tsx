@@ -7,10 +7,12 @@ const HeaderWrapper = styled.div<{open: boolean}>`
   display: block;
   text-align: ${(props) => props.open ? 'left' : 'center'};
   margin-top: ${(props) => props.open ? '0px' : '35vh'};
+  color: ${(props) => props.open ? '#a4a4a4' : 'var(--gray-dark)'};
   transition: margin-top var(--transition-time);
   user-select: none;
 
   &:active, &:visited {
+    color: ${(props) => props.open ? '#a4a4a4' : 'var(--gray-dark)'};
     color: var(--gray-dark);
   }
 
