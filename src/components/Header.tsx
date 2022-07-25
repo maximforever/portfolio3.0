@@ -57,7 +57,7 @@ const Finger = styled.img<{open: boolean}>`
   display: ${(props) => props.open ? "none" : "block"};
   filter: opacity(0.15);
 
-  animation-duration: 8s;
+  animation-duration: 5s;
   animation-name: bounce;
   animation-iteration-count: infinite;
 
@@ -68,10 +68,10 @@ const Finger = styled.img<{open: boolean}>`
 
   @keyframes bounce {
     20%  { margin-top: 0px; }
-    23% { margin-top: -0.3rem; }
-    26% { margin-top: 0px; }
-    29% { margin-top: -0.3rem; }
-    32% { margin-top: 0px; }
+    25% { margin-top: -0.3rem; }
+    30% { margin-top: 0px; }
+    35% { margin-top: -0.3rem; }
+    40% { margin-top: 0px; }
   }
 `
 
