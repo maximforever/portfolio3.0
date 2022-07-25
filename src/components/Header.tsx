@@ -7,7 +7,7 @@ const HeaderWrapper = styled.div<{open: boolean}>`
   display: block;
   text-align: ${(props) => props.open ? 'left' : 'center'};
   margin-top: ${(props) => props.open ? '0px' : '35vh'};
-  transition: padding-top var(--transition-time);
+  transition: margin-top var(--transition-time);
   user-select: none;
 
   &:active, &:visited {
