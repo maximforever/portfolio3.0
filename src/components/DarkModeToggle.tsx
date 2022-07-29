@@ -6,11 +6,20 @@ const ImageIcon = styled.span<{ darkMode: boolean, open: boolean }>`
   opacity: ${(props) => props.open ? '1' : '0'};
   visibility: ${(props) => props.open ? 'visible' : 'hidden'};
 
+  position: absolute;
+  top: 1rem;
+  right: 0;
+  font-size: 1.5rem;
+
   transition: opacity,1s;
 
   &:hover {
     color: ${(props) => props.darkMode ? 'yellow' : 'blue'};
     cursor: pointer;
+  }
+
+  @media only screen and (min-width: 768px) {
+    font-size: 2rem;
   }
 `
 

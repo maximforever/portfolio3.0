@@ -6,35 +6,27 @@ import { useNavigate } from "react-router-dom";
 const HeaderWrapper = styled.div<{open: boolean}>`
   text-align: ${(props) => props.open ? 'left' : 'center'};
   margin-top: ${(props) => props.open ? '0px' : '35vh'};
-  color: ${(props) => props.open ? '#a4a4a4' : 'var(--gray-dark)'};
   transition: margin-top var(--transition-time);
+  display: flex;
+
+  @media only screen and (min-width: 768px) {
+    margin-top: ${(props) => props.open ? '0px' : '32vh'};
+    text-align: left;
+  }
+`
+
+const TitleWrapper = styled.div`
+  color: color: var(--gray-dark);
   user-select: none;
 
   &:active, &:visited {
-    color: ${(props) => props.open ? '#a4a4a4' : 'var(--gray-dark)'};
     color: var(--gray-dark);
-  }
-
-  .lnr-sun, .lnr-moon {
-    position: absolute;
-    top: 1rem;
-    right: 0;
-    font-size: 1.5rem;
-
-    @media only screen and (min-width: 768px) {
-      font-size: 2rem;
-    }
   }
 
   &:hover {
     cursor: pointer;
     text-decoration: none;
     color: var(--blue);
-  }
-
-  @media only screen and (min-width: 768px) {
-    margin-top: ${(props) => props.open ? '0px' : '32vh'};
-    text-align: left;
   }
 `
 
@@ -109,10 +101,12 @@ const Header: React.FunctionComponent<PropsInterface> = ({open, setOpen, darkMod
   }
 
   return (
-    <HeaderWrapper open={open} onClick={handleClick}>
-      <Heading open={open}>Max Pekarsky</Heading>
-      <Subheading open={open}>full-stack product engineer</Subheading>
-      <Finger open={open} className="lnr lnr-pointer-up"/>
+    <HeaderWrapper open={open}>
+      <TitleWrapper onClick={handleClick}>
+        <Heading open={open}>Max Pekarsky</Heading>
+        <Subheading open={open}>full-stack product engineer</Subheading>
+        <Finger open={open} className="lnr lnr-pointer-up"/>
+      </TitleWrapper>
       <DarkModeToggle darkMode={darkMode} changeMode={(e) => changeMode(e)} open={open}/>
     </HeaderWrapper>
   );
