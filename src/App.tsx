@@ -39,8 +39,8 @@ const App: React.FunctionComponent = () => {
   const [darkMode, setDarkMode] = useState<boolean>(pageState());
 
   const toggleDarkMode = (e: React.MouseEvent<HTMLElement>) => {
-    console.log(`switching dark mode to: ${!darkMode}`);
     e.stopPropagation();
+    document.body.classList.toggle('dark-mode');
     setDarkMode(!darkMode);
   }
 

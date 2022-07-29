@@ -4,17 +4,16 @@ import styled from "styled-components";
 const ImageIcon = styled.span<{ darkMode: boolean, open: boolean }>`
   font-size: 1rem;
   opacity: ${(props) => props.open ? '1' : '0'};
+  color: ${(props) => props.darkMode ? 'var(--blue)' : 'var(--yellow)'};
   visibility: ${(props) => props.open ? 'visible' : 'hidden'};
-
   position: absolute;
   top: 1rem;
   right: 0;
   font-size: 1.5rem;
-
-  transition: opacity,1s;
+  transition-property: opacity color;
+  transition-duration: var(--transition-time);
 
   &:hover {
-    color: ${(props) => props.darkMode ? 'yellow' : 'blue'};
     cursor: pointer;
   }
 
@@ -42,7 +41,7 @@ const DarkModeToggle: React.FunctionComponent<{
     className="lnr lnr-moon"
   />;
 
-  return darkMode ? sun : moon;
+  return darkMode ? moon : sun;
 };
 
 export default DarkModeToggle;
