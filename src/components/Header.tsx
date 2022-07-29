@@ -1,5 +1,4 @@
 import React from "react";
-import finger from "../assets/finger.svg"
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 
@@ -52,12 +51,12 @@ const Subheading = styled.h2<{open: boolean}>`
   }
 `
 
-const Finger = styled.img<{open: boolean}>`
-  height: 1.6rem;
+const Finger = styled.span<{open: boolean}>`
+  font-size: 1.6rem;
+  color: #dedede;
   padding-top: 1.5rem;
   padding-left: 48%;
   display: ${(props) => props.open ? "none" : "block"};
-  filter: opacity(0.15);
 
   animation-duration: 5s;
   animation-name: bounce;
@@ -65,7 +64,7 @@ const Finger = styled.img<{open: boolean}>`
 
   @media only screen and (min-width: 768px) {
     padding-left: 12rem;
-    height: 2rem;
+    font-size: 2rem;
   }
 
   @keyframes bounce {
@@ -99,7 +98,7 @@ const Header: React.FunctionComponent<PropsInterface> = ({open, setOpen}) => {
     <HeaderWrapper open={open} onClick={handleClick}>
       <Heading open={open}>Max Pekarsky</Heading>
       <Subheading open={open}>full-stack product engineer</Subheading>
-      <Finger open={open} src={finger} alt="bouncing finger icon that encourage the user to click on the header and reveal the about me"/>
+      <Finger open={open} className="lnr lnr-pointer-up"/>
     </HeaderWrapper>
   );
 };

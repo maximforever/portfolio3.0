@@ -49,7 +49,7 @@ const App: React.FunctionComponent = () => {
 
   return (
     <AppWrapper className={`App ${darkMode ? 'dark-mode': ''}`}>
-      <DarkModeToggle darkMode={darkMode} changeMode={() => toggleDarkMode()} />
+      <DarkModeToggle darkMode={darkMode} changeMode={() => toggleDarkMode()} open={open} />
       <Header
         open={open}
         setOpen={(newState: boolean) => setToOpen(newState)}
