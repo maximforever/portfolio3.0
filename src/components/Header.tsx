@@ -1,9 +1,9 @@
+import DarkModeToggle from "./DarkModeToggle";
 import React from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 
 const HeaderWrapper = styled.div<{open: boolean}>`
-  display: block;
   text-align: ${(props) => props.open ? 'left' : 'center'};
   margin-top: ${(props) => props.open ? '0px' : '35vh'};
   color: ${(props) => props.open ? '#a4a4a4' : 'var(--gray-dark)'};
@@ -13,6 +13,17 @@ const HeaderWrapper = styled.div<{open: boolean}>`
   &:active, &:visited {
     color: ${(props) => props.open ? '#a4a4a4' : 'var(--gray-dark)'};
     color: var(--gray-dark);
+  }
+
+  .lnr-sun, .lnr-moon {
+    position: absolute;
+    top: 1rem;
+    right: 0;
+    font-size: 1.5rem;
+
+    @media only screen and (min-width: 768px) {
+      font-size: 2rem;
+    }
   }
 
   &:hover {
@@ -56,6 +67,7 @@ const Finger = styled.span<{open: boolean}>`
   color: #dedede;
   padding-top: 1.5rem;
   padding-left: 48%;
+  text-align: left;
   display: ${(props) => props.open ? "none" : "block"};
 
   animation-duration: 5s;
@@ -78,10 +90,12 @@ const Finger = styled.span<{open: boolean}>`
 
 interface PropsInterface {
   open: boolean;
-  setOpen: (newState: boolean) => void;
+  darkMode: boolean,
+  setOpen: (newState: boolean) => void,
+  changeMode: (e: React.MouseEvent<HTMLElement>) => void,
 }
 
-const Header: React.FunctionComponent<PropsInterface> = ({open, setOpen}) => {
+const Header: React.FunctionComponent<PropsInterface> = ({open, setOpen, darkMode, changeMode}) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
@@ -99,6 +113,7 @@ const Header: React.FunctionComponent<PropsInterface> = ({open, setOpen}) => {
       <Heading open={open}>Max Pekarsky</Heading>
       <Subheading open={open}>full-stack product engineer</Subheading>
       <Finger open={open} className="lnr lnr-pointer-up"/>
+      <DarkModeToggle darkMode={darkMode} changeMode={(e) => changeMode(e)} open={open}/>
     </HeaderWrapper>
   );
 };

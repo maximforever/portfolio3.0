@@ -1,7 +1,6 @@
 import "./App.css";
 import React, { useState } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
-import DarkModeToggle from "./components/DarkModeToggle";
 import Header from "./components/Header";
 import Main from "./components/Main";
 import Nav from "./components/Nav";
@@ -12,6 +11,7 @@ import writing from "./writing.json";
 
 const AppWrapper = styled.div`
   margin: 5vw;
+  position: absolute;
 
   @media only screen and (min-width: 768px) {
     margin: 5vw 0;
@@ -38,8 +38,9 @@ const App: React.FunctionComponent = () => {
   const [open, setOpen] = useState<boolean>(pageState());
   const [darkMode, setDarkMode] = useState<boolean>(pageState());
 
-  const toggleDarkMode = () => {
+  const toggleDarkMode = (e: React.MouseEvent<HTMLElement>) => {
     console.log(`switching dark mode to: ${!darkMode}`);
+    e.stopPropagation();
     setDarkMode(!darkMode);
   }
 
@@ -49,10 +50,11 @@ const App: React.FunctionComponent = () => {
 
   return (
     <AppWrapper className={`App ${darkMode ? 'dark-mode': ''}`}>
-      <DarkModeToggle darkMode={darkMode} changeMode={() => toggleDarkMode()} open={open} />
       <Header
         open={open}
+        darkMode={darkMode}
         setOpen={(newState: boolean) => setToOpen(newState)}
+        changeMode={(e: React.MouseEvent<HTMLElement>) => toggleDarkMode(e)}
       />
       <Nav open={open} currentPath={location.pathname} />
       <Routes>
