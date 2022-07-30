@@ -4,7 +4,7 @@ import styled from "styled-components";
 const ImageIcon = styled.span<{ darkMode: boolean, open: boolean }>`
   font-size: 1rem;
   opacity: ${(props) => props.open ? '1' : '0'};
-  color: ${(props) => props.darkMode ? 'var(--blue)' : 'var(--yellow)'};
+  color: ${(props) => props.darkMode ? 'var(--yellow)' : 'var(--blue)'};
   visibility: ${(props) => props.open ? 'visible' : 'hidden'};
   position: absolute;
   top: 1rem;
@@ -41,7 +41,7 @@ const DarkModeToggle: React.FunctionComponent<{
     className="lnr lnr-moon"
   />;
 
-  return darkMode ? moon : sun;
+  return darkMode ? sun : moon;
 };
 
 export default DarkModeToggle;

@@ -3,21 +3,12 @@ import React from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 
-const HeaderWrapper = styled.div<{open: boolean}>`
-  text-align: ${(props) => props.open ? 'left' : 'center'};
-  margin-top: ${(props) => props.open ? '0px' : '35vh'};
-  transition: margin-top var(--transition-time);
-  display: flex;
-
-  @media only screen and (min-width: 768px) {
-    margin-top: ${(props) => props.open ? '0px' : '32vh'};
-    text-align: left;
-  }
-`
-
-const TitleWrapper = styled.div`
+const TitleWrapper = styled.div<{open: boolean}>`
   color: color: var(--gray-dark);
   user-select: none;
+  text-align: ${(props) => props.open ? 'left' : 'center'};
+  width: 100%;
+  transition: width var(--transition-time);
 
   &:active, &:visited {
     color: var(--gray-dark);
@@ -27,6 +18,20 @@ const TitleWrapper = styled.div`
     cursor: pointer;
     text-decoration: none;
     color: var(--blue);
+  }
+
+  @media only screen and (min-width: 768px) {
+    text-align: left;
+  }
+`
+
+const HeaderWrapper = styled.div<{open: boolean}>`
+  margin-top: ${(props) => props.open ? '0px' : '35vh'};
+  transition: margin-top var(--transition-time);
+  display: flex;
+
+  @media only screen and (min-width: 768px) {
+    margin-top: ${(props) => props.open ? '0px' : '32vh'};
   }
 `
 
@@ -67,8 +72,8 @@ const Finger = styled.span<{open: boolean}>`
   animation-iteration-count: infinite;
 
   @media only screen and (min-width: 768px) {
-    padding-left: 12rem;
     font-size: 2rem;
+    padding-left: 12rem;
   }
 
   @keyframes bounce {
@@ -102,7 +107,7 @@ const Header: React.FunctionComponent<PropsInterface> = ({open, setOpen, darkMod
 
   return (
     <HeaderWrapper open={open}>
-      <TitleWrapper onClick={handleClick}>
+      <TitleWrapper open={open} onClick={handleClick}>
         <Heading open={open}>Max Pekarsky</Heading>
         <Subheading open={open}>full-stack product engineer</Subheading>
         <Finger open={open} className="lnr lnr-pointer-up"/>

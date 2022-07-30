@@ -36,11 +36,19 @@ const App: React.FunctionComponent = () => {
   };
 
   const [open, setOpen] = useState<boolean>(pageState());
-  const [darkMode, setDarkMode] = useState<boolean>(pageState());
+  const [darkMode, setDarkMode] = useState<boolean>(localStorage.getItem('darkMode') === "true");
+  console.log(`dark mode: ${darkMode}`);
+
+  if (darkMode) {
+    document.body.classList.add('dark-mode');
+  }
 
   const toggleDarkMode = (e: React.MouseEvent<HTMLElement>) => {
     e.stopPropagation();
+    console.log(darkMode);
     document.body.classList.toggle('dark-mode');
+    localStorage.setItem('darkMode', `${!darkMode}`);
+    console.log(localStorage.getItem('darkMode'));
     setDarkMode(!darkMode);
   }
 

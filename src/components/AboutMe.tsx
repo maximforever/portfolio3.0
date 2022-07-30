@@ -3,8 +3,9 @@ import styled from "styled-components";
 
 const AboutWrapper = styled.div<{ open: boolean }>`
   visibility: ${(props) => props.open ? 'initial' : 'hidden'};
-  line-height: 1.8;
   font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.8;
   opacity: ${(props) => props.open ? 1 : 0};
   overflow: hidden;
   max-height: ${(props) => props.open ? '100vh' : '0vh'};
