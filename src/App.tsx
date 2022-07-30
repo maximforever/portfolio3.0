@@ -36,7 +36,7 @@ const App: React.FunctionComponent = () => {
   };
 
   const [open, setOpen] = useState<boolean>(pageState());
-  const [darkMode, setDarkMode] = useState<boolean>(localStorage.getItem('darkMode') === "true");
+  const [darkMode, setDarkMode] = useState<boolean>(localStorage.getItem('MaximPekarskyDarkMode') === "true");
   console.log(`dark mode: ${darkMode}`);
 
   if (darkMode) {
@@ -47,7 +47,7 @@ const App: React.FunctionComponent = () => {
     e.stopPropagation();
     console.log(darkMode);
     document.body.classList.toggle('dark-mode');
-    localStorage.setItem('darkMode', `${!darkMode}`);
+    localStorage.setItem('MaximPekarskyDarkMode', `${!darkMode}`);
     console.log(localStorage.getItem('darkMode'));
     setDarkMode(!darkMode);
   }
@@ -57,7 +57,7 @@ const App: React.FunctionComponent = () => {
   };
 
   return (
-    <AppWrapper className={`App ${darkMode ? 'dark-mode': ''}`}>
+    <AppWrapper className={`App ${darkMode ? 'dark-mode' : ''}`}>
       <Header
         open={open}
         darkMode={darkMode}
