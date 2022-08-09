@@ -34,7 +34,7 @@ const App: React.FunctionComponent = () => {
   };
 
   const [open, setOpen] = useState<boolean>(pageState());
-  const [darkMode, setDarkMode] = useState<boolean>(localStorage.getItem('MaximPekarskyDarkMode') === "true");
+  const [darkMode, setDarkMode] = useState<boolean>(localStorage.getItem('MaxPekarskyDarkMode') === "true");
   console.log(`dark mode: ${darkMode}`);
 
   if (darkMode) {

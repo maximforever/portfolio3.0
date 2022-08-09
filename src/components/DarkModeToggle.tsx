@@ -3,12 +3,11 @@ import styled from "styled-components";
 
 const ImageIcon = styled.span<{ darkMode: boolean, open: boolean }>`
   font-size: 1rem;
+  font-weight: bold;
   opacity: ${(props) => props.open ? '1' : '0'};
   color: ${(props) => props.darkMode ? 'var(--yellow)' : 'var(--orange)'};
   visibility: ${(props) => props.open ? 'visible' : 'hidden'};
-  position: absolute;
-  top: 1rem;
-  right: 0;
+  padding-top: 1rem;
   font-size: 1.5rem;
   transition-property: opacity color;
   transition-duration: var(--transition-time);

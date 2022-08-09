@@ -16,7 +16,7 @@
   --font-sans-serif: "Montserrat", sans-serif;
   --font-monospace: "Source Code Pro", monospace;
   --orange: #d7ad5d;
-  --orange-alt: #0887bb;
+  --orange-alt: #43b1df;
   --yellow: #cfcf7d;
   --salmon: #f98072;
 
@@ -42,7 +42,10 @@ body.dark-mode {
 
 body.dark-mode a, body.dark-mode a:active, body.dark-mode a:visited {
   color: var(--orange-alt);
-  transition: color, var(--transition-time);
+}
+
+a:hover, body.dark-mode a:hover {
+  color: var(--salmon);
 }
 
 h1,
@@ -62,6 +65,3 @@ a:visited {
   font-weight: 600;
 }
 
-a:hover {
-  color: var(--salmon)
-}
