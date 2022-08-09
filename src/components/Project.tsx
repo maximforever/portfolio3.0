@@ -19,7 +19,7 @@ const Title = styled.h3`
 `;
 
 const Description = styled.p`
-  color: #717171;
+  color: var(--gray-medium);
   margin: 0;
   padding-bottom: 0.5rem;
   line-height: 1.8;

@@ -17,7 +17,7 @@ const TitleWrapper = styled.div<{open: boolean}>`
   &:hover {
     cursor: pointer;
     text-decoration: none;
-    color: var(--orange);
+    color: var(--salmon);
   }
 
   @media only screen and (min-width: 768px) {
@@ -26,12 +26,12 @@ const TitleWrapper = styled.div<{open: boolean}>`
 `
 
 const HeaderWrapper = styled.div<{open: boolean}>`
-  margin-top: ${(props) => props.open ? '0px' : '35vh'};
-  transition: margin-top var(--transition-time);
+  padding-top: ${(props) => props.open ? '0px' : '35vh'};
+  transition: padding-top var(--transition-time);
   display: flex;
 
   @media only screen and (min-width: 768px) {
-    margin-top: ${(props) => props.open ? '0px' : '32vh'};
+    padding-top: ${(props) => props.open ? '0px' : '32vh'};
   }
 `
 

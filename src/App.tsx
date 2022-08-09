@@ -10,15 +10,13 @@ import styled from "styled-components";
 import writing from "./writing.json";
 
 const AppWrapper = styled.div`
-  margin: 5vw;
-  position: absolute;
+  padding: 5vw;
+  width: 90vw;
 
   @media only screen and (min-width: 768px) {
-    margin: 5vw 0;
-    margin-left: 4rem;
-    margin-top: 2rem;
-    width: 90%;
-    max-width: 768px;
+    padding: 2rem 4rem;
+    max-width: 2000px;
+    margin: 0 auto;
   }
 `;
 
@@ -45,10 +43,8 @@ const App: React.FunctionComponent = () => {
 
   const toggleDarkMode = (e: React.MouseEvent<HTMLElement>) => {
     e.stopPropagation();
-    console.log(darkMode);
     document.body.classList.toggle('dark-mode');
-    localStorage.setItem('MaximPekarskyDarkMode', `${!darkMode}`);
-    console.log(localStorage.getItem('darkMode'));
+    localStorage.setItem('MaxPekarskyDarkMode', `${!darkMode}`);
     setDarkMode(!darkMode);
   }
 

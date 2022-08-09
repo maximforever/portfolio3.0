@@ -30,8 +30,13 @@ const NavItem = styled.li<{active?: boolean}>`
   font-weight: 600;
 
   > a {
+    padding-bottom: 0.3rem;
     color: ${(props) => props.active ? 'var(--orange)' : 'var(--gray-medium)'};
-    text-decoration: ${(props) => props.active ? 'underline' : 'none'};
+    border-bottom: ${(props) => props.active ? "2px solid var(--orange)" : "initial"};
+
+    &:hover {
+      color: ${(props) => props.active ? 'var(--orange)' : 'var(--salmon)'};
+    }
   }
 
   @media only screen and (min-width: 512px) {
