@@ -30,7 +30,7 @@ const NavItem = styled.li<{active?: boolean}>`
   font-weight: 600;
 
   > a {
-    color: ${(props) => props.active ? 'var(--blue)' : 'var(--gray-medium)'};
+    color: ${(props) => props.active ? 'var(--orange)' : 'var(--gray-medium)'};
     text-decoration: ${(props) => props.active ? 'underline' : 'none'};
   }
 

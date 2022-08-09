@@ -4,20 +4,21 @@
 */
 
 :root {
-  --base-background-color: #fcfcfc;
-  --base-text-color:#343434;
+  --base-background-color: #fffbf0;
+  --base-text-color:#796c5a;
 
   --base-background-color-dark-mode: #011c28;
   --base-text-color-dark-mode:#bbdcea;
 
   --gray-dark: #343434;
-  --gray-medium: #8a8a8a;
+  --gray-medium: #c1ac8d;
   --font-serif: "Vollkorn", serif;
   --font-sans-serif: "Montserrat", sans-serif;
   --font-monospace: "Source Code Pro", monospace;
-  --blue: #008bcd;
-  --blue-alt: #0887bb;
+  --orange: #d7ad5d;
+  --orange-alt: #0887bb;
   --yellow: #cfcf7d;
+  --salmon: #f98072;
 
   --transition-time: 0.7s;
 }
@@ -40,7 +41,7 @@ body.dark-mode {
 }
 
 body.dark-mode a, body.dark-mode a:active, body.dark-mode a:visited {
-  color: var(--blue-alt);
+  color: var(--orange-alt);
   transition: color, var(--transition-time);
 }
 
@@ -57,10 +58,10 @@ a,
 a:active,
 a:visited {
   text-decoration: none;
-  color: var(--blue);
+  color: var(--orange);
   font-weight: 600;
 }
 
 a:hover {
-  text-decoration: underline;
+  color: var(--salmon)
 }

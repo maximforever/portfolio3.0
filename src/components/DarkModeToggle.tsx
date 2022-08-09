@@ -4,7 +4,7 @@ import styled from "styled-components";
 const ImageIcon = styled.span<{ darkMode: boolean, open: boolean }>`
   font-size: 1rem;
   opacity: ${(props) => props.open ? '1' : '0'};
-  color: ${(props) => props.darkMode ? 'var(--yellow)' : 'var(--blue)'};
+  color: ${(props) => props.darkMode ? 'var(--yellow)' : 'var(--orange)'};
   visibility: ${(props) => props.open ? 'visible' : 'hidden'};
   position: absolute;
   top: 1rem;

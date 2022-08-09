@@ -17,7 +17,7 @@ const TitleWrapper = styled.div<{open: boolean}>`
   &:hover {
     cursor: pointer;
     text-decoration: none;
-    color: var(--blue);
+    color: var(--orange);
   }
 
   @media only screen and (min-width: 768px) {
