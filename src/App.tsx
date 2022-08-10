@@ -10,13 +10,15 @@ import styled from "styled-components";
 import writing from "./writing.json";
 
 const AppWrapper = styled.div`
+  min-width: 350px;
   padding: 5vw;
-  width: 90vw;
+  box-sizing: border-box;
 
   @media only screen and (min-width: 768px) {
     padding: 2rem 4rem;
     max-width: 2000px;
     margin: 0 auto;
+    box-sizing: initial;
   }
 `;
 
