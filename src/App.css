@@ -9,7 +9,6 @@
 
   --base-background-color-dark-mode: #011c28;
   --base-text-color-dark-mode:#bbdcea;
-
   --gray-dark: #343434;
   --gray-medium: #c1ac8d;
   --font-serif: "Vollkorn", serif;
@@ -17,10 +16,17 @@
   --font-monospace: "Source Code Pro", monospace;
   --orange: #d7ad5d;
   --orange-alt: #43b1df;
-  --yellow: #cfcf7d;
-  --salmon: #f98072;
+  --link-main: #cfcf7d;
+  --link-hover: #f98072;
 
   --transition-time: 0.7s;
+}
+
+.body {
+  --base-background-color:
+  --base-text-color:#796c5a;
+
+  --link-main: #cfcf7d;
 }
 
 body {
@@ -45,7 +51,7 @@ body.dark-mode a, body.dark-mode a:active, body.dark-mode a:visited {
 }
 
 a:hover, body.dark-mode a:hover {
-  color: var(--salmon);
+  color: var(--link-hover);
 }
 
 h1,

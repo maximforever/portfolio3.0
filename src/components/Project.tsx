@@ -3,10 +3,11 @@ import React from "react";
 import styled from "styled-components";
 
 const Project = styled.div`
-  padding-bottom: 5rem;
+  margin-bottom: 5rem;
 
   @media only screen and (min-width: 768px) {
-    padding-bottom: 4rem;
+    margin: 0 6rem 6rem 0;
+    width: 600px;
   }
 `;
 

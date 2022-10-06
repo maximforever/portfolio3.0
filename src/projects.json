@@ -14,13 +14,13 @@
   {
     "title": "Tiny Logger",
     "link": "https://www.tinylogger.com",
-    "description": "TinyLogger is a minimal, distraction-free blogging platform. It centers around a clean interface that allows user to focus on writing. Everything autosaves as the user types, and additional tools appear on hover.",
+    "description": "TinyLogger is a minimal, distraction-free blogging platform. The minimal interface auto-saves, cleverly hides distractions, and focuses the user on writing.",
     "stack": ["Node.js", "Express", "Vue.js", "MongoDB"]
   },
   {
     "title": "Trakr",
     "link": "https://www.mytrakr.app",
-    "description": "Named after a heroic 9/11 dog, Trakr is a personal budgeting app. Users can enter and tag expenses, review a monthly dashboard, and see charts and graphs of their spending anaytics.",
+    "description": "Named after a heroic 9/11 dog, Trakr is a personal budgeting app. Users can enter and tag expenses, review a monthly dashboard, and see charts and graphs of their spending analytics.",
     "stack": ["Rails", "React.js", "OAuth", "Victory Charts", "PostgreSQL"]
   },
   {
