@@ -17,7 +17,7 @@ const GlobalStyles = createGlobalStyle`
     --link-main: #cfcf7d;
     --link-hover: #f98072;
 
-    --transition-time: 0.3s;
+    --transition-time: 0.7s;
   }
 
   body {

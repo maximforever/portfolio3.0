@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import styled, { ThemeProvider } from "styled-components";
 import GlobalStyles from "./stylesheets/GlobalStyles";
@@ -11,13 +11,13 @@ import writing from "./writing.json";
 
 const AppWrapper = styled.div`
   min-width: 350px;
+  max-width: 2000px;
   padding: 5vw;
+  margin: 0 auto;
   box-sizing: border-box;
 
   @media only screen and (min-width: 768px) {
     padding: 2rem 4rem;
-    max-width: 2000px;
-    margin: 0 auto;
     box-sizing: initial;
   }
 `;
@@ -36,29 +36,32 @@ const App: React.FunctionComponent = () => {
   };
 
   const [open, setOpen] = useState<boolean>(pageState());
-  const [darkMode, setDarkMode] = useState<boolean>(localStorage.getItem('MaxPekarskyDarkMode') === "true");
-  console.log(`dark mode: ${darkMode}`);
-
-  if (darkMode) {
-    document.body.classList.add('dark-mode');
-  }
+  const [darkMode, setDarkMode] = useState<boolean>(false);
+  const [mountedComponent, setMountedComponent] = useState<boolean>(false);
 
   const toggleDarkMode = (e: React.MouseEvent<HTMLElement>) => {
     e.stopPropagation();
-    document.body.classList.toggle('dark-mode');
-    localStorage.setItem('MaxPekarskyDarkMode', `${!darkMode}`);
+    localStorage.setItem('MaximPekarskyDarkMode', `${!darkMode}`);
     setDarkMode(!darkMode);
   }
+
+  useEffect(() => {
+    const darkModeOn = JSON.parse(localStorage.getItem("MaximPekarskyDarkMode") ?? "false")
+    setDarkMode(darkModeOn);
+    setMountedComponent(true);
+  })
 
   const setToOpen = (newState: boolean) => {
     setOpen(newState);
   };
 
-  return (
+  console.log(mountedComponent);
+
+  return !mountedComponent ? <div /> : (
     <ThemeProvider theme={{ darkMode }}>
       <>
         <GlobalStyles />
-        <AppWrapper className={`App ${darkMode ? 'dark-mode' : ''}`}>
+        <AppWrapper>
           <Header
             open={open}
             darkMode={darkMode}
