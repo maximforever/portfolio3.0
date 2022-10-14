@@ -30,12 +30,12 @@
 }
 
 body {
-  margin: 0px;
-  padding: 0px;
   font-family: var(--font-sans-serif);
-  font-weight: 500;
   background: var(--base-background-color);
   color: var(--base-text-color);
+  margin: 0px;
+  padding: 0px;
+  font-weight: 500;
 
   transition-property: color, background;
   /* transition-duration: var(--transition-time); */

@@ -1,12 +1,12 @@
-import "./App.css";
 import React, { useState } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
+import styled, { ThemeProvider } from "styled-components";
+import GlobalStyles from "./stylesheets/GlobalStyles";
 import Header from "./components/Header";
 import Main from "./components/Main";
 import Nav from "./components/Nav";
 import NotFound from "./components/NotFound";
 import projects from "./projects.json";
-import styled from "styled-components";
 import writing from "./writing.json";
 
 const AppWrapper = styled.div`
@@ -55,28 +55,33 @@ const App: React.FunctionComponent = () => {
   };
 
   return (
-    <AppWrapper className={`App ${darkMode ? 'dark-mode' : ''}`}>
-      <Header
-        open={open}
-        darkMode={darkMode}
-        setOpen={(newState: boolean) => setToOpen(newState)}
-        changeMode={(e: React.MouseEvent<HTMLElement>) => toggleDarkMode(e)}
-      />
-      <Nav open={open} currentPath={location.pathname} />
-      <Routes>
-        <Route path="/" element={<Main open={open} />} />
-        <Route path="about" element={<Main open={open} />} />
-        <Route
-          path="projects"
-          element={<Main open={open} projects={projects} />}
-        />
-        <Route
-          path="writing"
-          element={<Main open={open} projects={writing} />}
-        />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </AppWrapper>
+    <ThemeProvider theme={{ darkMode }}>
+      <>
+        <GlobalStyles />
+        <AppWrapper className={`App ${darkMode ? 'dark-mode' : ''}`}>
+          <Header
+            open={open}
+            darkMode={darkMode}
+            setOpen={(newState: boolean) => setToOpen(newState)}
+            changeMode={(e: React.MouseEvent<HTMLElement>) => toggleDarkMode(e)}
+          />
+          <Nav open={open} currentPath={location.pathname} />
+          <Routes>
+            <Route path="/" element={<Main open={open} />} />
+            <Route path="about" element={<Main open={open} />} />
+            <Route
+              path="projects"
+              element={<Main open={open} projects={projects} />}
+            />
+            <Route
+              path="writing"
+              element={<Main open={open} projects={writing} />}
+            />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </AppWrapper>
+      </>
+    </ThemeProvider >
   );
 }
 
