@@ -20,7 +20,7 @@ const Title = styled.h3`
 `;
 
 const Description = styled.p`
-  color: var(--gray-medium);
+  color: ${({ theme }) => theme.darkMode ? "var(--base-text-color-dark-mode)" : "var(--gray-medium)"};
   margin: 0;
   padding-bottom: 0.5rem;
   line-height: 1.8;
