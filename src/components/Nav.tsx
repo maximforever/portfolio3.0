@@ -1,32 +1,60 @@
-import React from "react";
+import React, { useState } from "react";
 import Resume from "../assets/Max_Pekarsky_Resume.pdf"
 import styled from "styled-components";
 
 const Navigation = styled.div<{ open: boolean }>`
   opacity: ${(props) => props.open ? 1 : 0};
   visibility: ${(props) => props.open ? "initial" : "hidden"};
-  display: flex;
   line-height: 2;
   transition: opacity var(--transition-time);
   margin: 0px;
-  padding: 2rem 0 3rem 0;
+  padding: 2rem 0;
   user-select: none;
   font-size: 0.9rem;
 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 3rem;
+
   @media only screen and (min-width: 512px) {
+    align-items: flex-start;d
+    font-size: 1rem;
     justify-content: flex-start;
+  }
+
+  @media only screen and (min-width: 768px) {
+    padding: 0;
+    font-size: 1rem;
+  }
+`;
+
+const NavItems = styled.div<{ navOpen: boolean }>`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height: ${(props) => props.navOpen ? "100vh" : "0vh"};
+  overflow: hidden;
+  transition-property: margin-top, max-height;
+  transition-duration: var(--transition-time);
+
+  @media only screen and (min-width: 512px) {
+    flex-direction: row;
+    font-size: 1rem;
+    justify-content: flex-start;
+    max-height: 100%;
   }
 
   @media only screen and (min-width: 768px) {
     padding: 2rem 0 4rem 0;
     font-size: 1rem;
   }
-`;
+`
 
 const NavItem = styled.a<{ active?: boolean }>`
   list-style: none;
   font-weight: 600;
-  padding-bottom: 0.3rem;
+  margin-bottom: 2rem;
   color: ${(props) => props.active ? 'var(--orange)' : 'var(--gray-medium)'};
   border-bottom: ${(props) => props.active ? "2px solid var(--orange)" : "initial"};
   margin-right: 2rem;
@@ -36,6 +64,7 @@ const NavItem = styled.a<{ active?: boolean }>`
   }
 
   @media only screen and (min-width: 512px) {
+    margin-bottom: 0px;
     margin-right: 3rem;
   }
 
@@ -44,40 +73,31 @@ const NavItem = styled.a<{ active?: boolean }>`
   }
 `;
 
-const DesktopNavItem = styled(NavItem)`
-display: none;
-
-@media only screen and (min-width: 512px) {
-  display: initial;
-}
-`
-
-const MobileNavItem = styled.span`
-  display: initial;
-  color: var(--orange);
-  font-weight: bold;
-  font-size: 2rem;
-  display: flex;
-  flex: 1;
-  justify-content: flex-end;
-
+const NavToggle = styled.span`
   @media only screen and (min-width: 512px) {
     display: none;
   }
 `
 
 const Nav: React.FunctionComponent<{ open: boolean, currentPath: string }> = ({ open, currentPath }) => {
+  const [navOpen, setNavOpen] = useState<boolean>(true)
+
   const isPage = (pathname: string) => {
     return pathname === currentPath;
   }
 
+  const toggleOpen = () => { setNavOpen(!navOpen) }
+
   return (
     <Navigation open={open}>
-      <NavItem active={isPage("/about")} href="/about">About</NavItem>
-      <NavItem active={isPage("/projects")} href="/projects">Projects</NavItem>
-      <NavItem active={isPage("/writing")} href="writing">Writing</NavItem>
-      <DesktopNavItem href="https://www.tinylogger.com/max" target="_blank" rel="nofollow noreferrer">Blog</DesktopNavItem>
-      <DesktopNavItem href={Resume} target="_blank" rel="noreferrer nofollow">Resume</DesktopNavItem>
+      <NavToggle onClick={toggleOpen} className={navOpen ? "lnr lnr-cross" : "lnr lnr-menu"} />
+      <NavItems navOpen={navOpen}>
+        <NavItem active={isPage("/about")} href="/about">About</NavItem>
+        <NavItem active={isPage("/projects")} href="/projects">Projects</NavItem>
+        <NavItem active={isPage("/writing")} href="writing">Writing</NavItem>
+        <NavItem href="https://www.tinylogger.com/max" target="_blank" rel="nofollow noreferrer">Blog</NavItem>
+        <NavItem href={Resume} target="_blank" rel="noreferrer nofollow">Resume</NavItem>
+      </NavItems>
     </Navigation>
   );
 };
