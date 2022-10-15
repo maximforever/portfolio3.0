@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Resume from "../assets/Max_Pekarsky_Resume.pdf"
 import styled from "styled-components";
 
@@ -81,6 +81,13 @@ const NavToggle = styled.span`
 
 const Nav: React.FunctionComponent<{ open: boolean, currentPath: string }> = ({ open, currentPath }) => {
   const [navOpen, setNavOpen] = useState<boolean>(true)
+
+  useEffect(() => {
+    // if the website state is "closed" (only name is displayed), we should immediately close the menu
+    if (!open) {
+      setNavOpen(false);
+    }
+  })
 
   const isPage = (pathname: string) => {
     return pathname === currentPath;
