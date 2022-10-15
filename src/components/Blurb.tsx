@@ -6,10 +6,7 @@ const StyledBlurb = styled.div`
   margin-bottom: 4rem;
   line-height: 1.6;
   font-weight: 400;
-
-  padding: 1rem;
-  border-radius: 0.6rem;
-  border: 1px solid ${({ theme }) => theme.darkMode ? "#263d4a" : "#e8e1cc"};
+  max-width: 700px;
 
   @media only screen and (min-width: 768px) {
     font-size: 1.1rem;

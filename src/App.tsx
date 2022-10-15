@@ -11,7 +11,7 @@ import writing from "./writing.json";
 
 const AppWrapper = styled.div`
   min-width: 350px;
-  max-width: 1200px;
+  max-width: 2000px;
   padding: 5vw;
   margin: 0 auto;
   box-sizing: border-box;
