@@ -25,7 +25,7 @@
   },
   {
     "title": "MaximPekarsky.com",
-    "link": "https://www.maximpekarsky.com",
+    "link": "/",
     "description": "This portfolio is built with server-side rendered React.js, TypeScript, and styled-components",
     "stack": ["React.js", "TypeScript", "styled-components"]
   }
