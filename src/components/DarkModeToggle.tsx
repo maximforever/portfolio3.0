@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const ImageIcon = styled.span<{ darkMode: boolean, open: boolean }>`
+const ImageIcon = styled.span<{ open: boolean }>`
   font-size: 1rem;
   font-weight: bold;
   opacity: ${(props) => props.open ? '1' : '0'};
@@ -28,14 +28,12 @@ const DarkModeToggle: React.FunctionComponent<{
   open: boolean,
 }> = ({ darkMode, changeMode, open }) => {
   const sun = <ImageIcon
-    darkMode={darkMode}
     open={open}
     onClick={(e) => changeMode(e)}
     className="lnr lnr-sun"
   />
 
   const moon = <ImageIcon
-    darkMode={darkMode}
     open={open}
     onClick={(e) => changeMode(e)}
     className="lnr lnr-moon"

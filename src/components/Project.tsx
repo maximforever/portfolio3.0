@@ -41,7 +41,7 @@ const Info = styled.div`
 `;
 
 const Visual = styled.div`
-  background: yellow;
+  background: green;
   height: 200px;
   width: 300px;
   margin-bottom: 1rem;
