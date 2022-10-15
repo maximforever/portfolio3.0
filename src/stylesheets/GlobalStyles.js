@@ -35,7 +35,8 @@ const GlobalStyles = createGlobalStyle`
     padding: 0px;
     font-weight: 500;
     transition-property: color, background;
-    transition-duration: var(--transition-time);
+    // TODO: change to "var(--transition-time)" and fix on-load dark mode transition time issue
+    transition-duration: 0s;
   }
 
   a, a:visited, a:active {
