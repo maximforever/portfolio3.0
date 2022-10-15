@@ -4,14 +4,19 @@ import styled from "styled-components";
 
 const Project = styled.div`
   margin-bottom: 5rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 
   @media only screen and (min-width: 768px) {
+    flex-direction: row;
     margin: 0 6rem 6rem 0;
     width: 600px;
   }
 `;
 
 const Title = styled.h3`
+  color: ${({ theme }) => theme.darkMode ? "#93c5fa" : "#b8935f"};
   font-weight: 600;
   font-size: 1.2rem;
   margin: 0;
@@ -20,7 +25,7 @@ const Title = styled.h3`
 `;
 
 const Description = styled.p`
-  color: ${({ theme }) => theme.darkMode ? "var(--base-text-color-dark-mode)" : "var(--gray-medium)"};
+  color: ${({ theme }) => theme.darkMode ? "var(--base-text-color-dark-mode)" : "var(--base-text-color)"};
   margin: 0;
   padding-bottom: 0.5rem;
   line-height: 1.8;
@@ -31,17 +36,24 @@ const Description = styled.p`
   }
 `;
 
-const ProjectLink = styled.a`
-  font-weight: 600;
-  padding-bottom: 1rem;
+const Info = styled.div`
+  flex: 2;
+`;
+
+const Visual = styled.div`
+  background: yellow;
+  height: 200px;
+  width: 300px;
+  margin-bottom: 1rem;
   display: block;
-  overflow-wrap: break-word;
-  font-size: 0.9rem;
 
   @media only screen and (min-width: 768px) {
-    font-size: 1rem;
+    margin-bottom: 0px;
+    margin-right: 1rem;
+    // TODO: this is incorrect; come back to this to set the columns right.
+    flex: 1;
   }
-`
+`;
 
 const Tag = styled.div`
   display: block;
@@ -67,17 +79,21 @@ const TagWrapper = styled.div`
 const Nav: React.FunctionComponent<{ project: ProjectInterface }> = ({ project }) => {
   const renderStack = () => {
     // writing projects don't have a stack
-    if(project.stack === undefined){ return null }
+    if (project.stack === undefined) { return null }
 
-    return project.stack.map((tech, index) =>  <Tag key={index}>{tech}</Tag>)
+    return project.stack.map((tech, index) => <Tag key={index}>{tech}</Tag>)
   }
 
   return (
     <Project>
-      <Title>{project.title}</Title>
-      <Description>{project.description}</Description>
-      <ProjectLink href={project.link} target="_blank" rel="noopener noreferrer">{project.link}</ProjectLink>
-      <TagWrapper>{renderStack()}</TagWrapper>
+      <Visual></Visual>
+      <Info>
+        <a href={project.link} target="_blank" rel="noopener noreferrer">
+          <Title>{project.title}</Title>
+        </a>
+        <Description>{project.description}</Description>
+        <TagWrapper>{renderStack()}</TagWrapper>
+      </Info>
     </Project>
   );
 };

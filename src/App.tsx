@@ -55,8 +55,6 @@ const App: React.FunctionComponent = () => {
     setOpen(newState);
   };
 
-  console.log(mountedComponent);
-
   return !mountedComponent ? <div /> : (
     <ThemeProvider theme={{ darkMode }}>
       <>

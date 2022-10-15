@@ -5,15 +5,16 @@ const ImageIcon = styled.span<{ darkMode: boolean, open: boolean }>`
   font-size: 1rem;
   font-weight: bold;
   opacity: ${(props) => props.open ? '1' : '0'};
-  color: ${(props) => props.darkMode ? 'var(--yellow)' : 'var(--orange)'};
+  color: ${({ theme }) => theme.darkMode ? 'var(--yellow)' : 'var(--orange)'};
   visibility: ${(props) => props.open ? 'visible' : 'hidden'};
   padding-top: 1rem;
   font-size: 1.5rem;
   transition-property: opacity color;
-  transition-duration: var(--transition-time);
 
   &:hover {
     cursor: pointer;
+    // these colors are a bit brighter than the baseline orange/blue colors for better contrast.
+    color: ${({ theme }) => theme.darkMode ? '#f4d47d' : '#076a96'};
   }
 
   @media only screen and (min-width: 768px) {
