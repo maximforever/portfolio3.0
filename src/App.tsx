@@ -62,7 +62,7 @@ const App: React.FunctionComponent = () => {
     I've always stayed close to the intersection of code, education, and writing.
     From my work at Codecademy and Execute Program to writing for StackOverflow and on my blog,
     I have a strong intrinsic motivation to pay it forward and simplify the journey for those learning to code today.
-    So, I often write a lot about topics I struggled with, breaking them in ways I wish they were explain to me.
+    So, I often write a lot about topics I struggled with, breaking them in ways I wish they were explained to me.
     Writing is an indispensible tool: it helps me organize my thinking, clearly communicate my ideas, and, hopefully, encourage the next generation of developers.`
 
   const projectsBlurb = `I started to code because I wanted to build useful tools for myself and others.

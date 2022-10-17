@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 const StyledBlurb = styled.div`
   margin-bottom: 4rem;
-  line-height: 1.6;
+  line-height: 1.8;
   font-weight: 400;
   max-width: 700px;
 
