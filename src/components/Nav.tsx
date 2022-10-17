@@ -61,10 +61,8 @@ const NavItems = styled.div<{ navOpen: boolean }>`
 `
 
 const NavItem = styled.a<{ active?: boolean }>`
-  list-style: none;
   font-weight: 600;
   margin-bottom: 2rem;
-  color: ${(props) => props.active ? 'var(--orange)' : 'var(--gray-medium)'};
   border-bottom: ${(props) => props.active ? "2px solid var(--orange)" : "initial"};
   margin-right: 2rem;
 
