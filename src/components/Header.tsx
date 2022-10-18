@@ -17,7 +17,7 @@ const TitleWrapper = styled.div<{open: boolean}>`
   &:hover {
     cursor: pointer;
     text-decoration: none;
-    color: var(--salmon);
+    color: var(--link-hover);
   }
 
   @media only screen and (min-width: 768px) {
@@ -61,7 +61,7 @@ const Subheading = styled.h2<{open: boolean}>`
 
 const Finger = styled.span<{open: boolean}>`
   font-size: 1.6rem;
-  color: #dedede;
+  color: ${({ theme }) => theme.darkMode ? "#0a415b" : "#dedede"};
   padding-top: 1.5rem;
   padding-left: 48%;
   text-align: left;
