@@ -40,8 +40,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   a, a:visited, a:active {
-    color: ${(theme) =>
-      theme.darkMode ? "var(--orange)" : "var(--orange-alt)"};
+    color: var(--orange-alt);
     text-decoration: none;
     font-weight: 600;
 

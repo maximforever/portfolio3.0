@@ -60,14 +60,16 @@ const NavItems = styled.div<{ navOpen: boolean }>`
   }
 `
 
+const getBorderColor = (darkMode: boolean): string => darkMode ? "var(--orange-alt)" : "var(--orange)";
+
 const NavItem = styled.a<{ active?: boolean }>`
   font-weight: 600;
   margin-bottom: 2rem;
-  border-bottom: ${(props) => props.active ? "2px solid var(--orange)" : "initial"};
+  border-bottom: 2px solid ${(props) => props.active ? getBorderColor(props.theme.darkMode) : "none"};
   margin-right: 2rem;
 
   &:hover {
-    color: ${(props) => props.active ? 'var(--link-main)' : 'var(--link-hover)'};
+  color: ${ (props) => props.active ? 'var(--orange-alt) !important' : 'var(--link-hover) !important' };
   }
 
   @media only screen and (min-width: 512px) {
