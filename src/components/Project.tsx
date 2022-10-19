@@ -16,7 +16,7 @@ const Project = styled.div`
 `;
 
 const Title = styled.h3`
-  color: ${({ theme }) => theme.darkMode ? "#93c5fa" : "#b8935f"};
+  color: ${({ theme }) => theme.darkMode ? "inherit" : "#b8935f"};
   font-weight: 600;
   font-size: 1.2rem;
   margin: 0;
