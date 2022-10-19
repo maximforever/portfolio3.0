@@ -27,7 +27,7 @@ const Navigation = styled.div<{ open: boolean }>`
   font-size: 3rem;
 
   @media only screen and (min-width: 512px) {
-    align-items: flex-start;d
+    align-items: flex-start;
     font-size: 1rem;
     justify-content: flex-start;
   }
@@ -45,13 +45,13 @@ const NavItems = styled.div<{ navOpen: boolean }>`
   max-height: ${(props) => props.navOpen ? "100vh" : "0vh"};
   overflow: hidden;
   transition-property: margin-top, max-height;
-  transition-duration: var(--transition-time);
+  transition-duration: ${(props) => props.navOpen ? "var(--transition-time)" : "0s"};
 
   @media only screen and (min-width: 512px) {
     flex-direction: row;
     font-size: 1rem;
     justify-content: flex-start;
-    max-height: 100%;
+    max-height: 100vh;
   }
 
   @media only screen and (min-width: 768px) {
@@ -87,14 +87,14 @@ const NavToggle = styled.span`
 `
 
 const Nav: React.FunctionComponent<{ open: boolean, currentPath: string }> = ({ open, currentPath }) => {
-  const [navOpen, setNavOpen] = useState<boolean>(true)
+  const [navOpen, setNavOpen] = useState<boolean>(false)
 
   useEffect(() => {
     // if the website state is "closed" (only name is displayed), we should immediately close the menu
     if (!open) {
       setNavOpen(false);
     }
-  })
+  });
 
   const isPage = (pathname: string) => {
     return pathname === currentPath;
