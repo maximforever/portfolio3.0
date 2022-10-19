@@ -20,7 +20,6 @@ const MainWrapper = styled.div<{ open: boolean }>`
 const Main: React.FunctionComponent<{
   open: boolean,
 }> = ({ open }) => {
-  console.log(`I am main, open: ${open}`);
   return (
     <MainWrapper open={open}>
       <Nav currentPath={location.pathname} />
