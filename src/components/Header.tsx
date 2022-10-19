@@ -88,15 +88,15 @@ const Finger = styled.span<{open: boolean}>`
 interface PropsInterface {
   open: boolean;
   darkMode: boolean,
-  setOpen: (newState: boolean) => void,
-  changeMode: (e: React.MouseEvent<HTMLElement>) => void,
+  openOrCloseWebsite: (newState: boolean) => void,
+  toggleDarkMode: (e: React.MouseEvent<HTMLElement>) => void,
 }
 
-const Header: React.FunctionComponent<PropsInterface> = ({open, setOpen, darkMode, changeMode}) => {
+const Header: React.FunctionComponent<PropsInterface> = ({ open, openOrCloseWebsite, darkMode, toggleDarkMode }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    setOpen(!open);
+    openOrCloseWebsite(!open);
 
     if(!open){
       navigate("/about");
@@ -112,7 +112,7 @@ const Header: React.FunctionComponent<PropsInterface> = ({open, setOpen, darkMod
         <Subheading open={open}>full-stack product engineer</Subheading>
         <Finger open={open} className="lnr lnr-pointer-up"/>
       </TitleWrapper>
-      <DarkModeToggle darkMode={darkMode} changeMode={(e) => changeMode(e)} open={open}/>
+      <DarkModeToggle darkMode={darkMode} changeMode={(e) => toggleDarkMode(e)} open={open} />
     </HeaderWrapper>
   );
 };

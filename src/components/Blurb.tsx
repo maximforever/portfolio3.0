@@ -1,8 +1,6 @@
-import { Project as ProjectInterface } from "../types";
-import React from "react";
 import styled from "styled-components";
 
-const StyledBlurb = styled.div`
+export const Blurb = styled.div`
   margin-bottom: 4rem;
   line-height: 1.8;
   font-weight: 400;
@@ -12,9 +10,3 @@ const StyledBlurb = styled.div`
     font-size: 1.1rem;
   }
 `
-
-const Blurb: React.FunctionComponent<{ blurb: string }> = ({ blurb }) => {
-  return <StyledBlurb>{blurb}</StyledBlurb>
-};
-
-export default Blurb;
