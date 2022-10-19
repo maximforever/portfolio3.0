@@ -2,9 +2,7 @@ import React, { useEffect, useState } from "react";
 import Resume from "../assets/Max_Pekarsky_Resume.pdf"
 import styled from "styled-components";
 
-const Navigation = styled.div<{ open: boolean }>`
-  opacity: ${(props) => props.open ? 1 : 0};
-  visibility: ${(props) => props.open ? "initial" : "hidden"};
+const Navigation = styled.div`
   line-height: 2;
   transition: opacity var(--transition-time);
   margin: 0px;
@@ -47,6 +45,11 @@ const NavItems = styled.div<{ navOpen: boolean }>`
   transition-property: margin-top, max-height;
   transition-duration: ${(props) => props.navOpen ? "var(--transition-time)" : "0s"};
 
+  .lnr-arrow-right {
+    font-weight: 600;
+    padding-left: 0.5rem;
+  }
+
   @media only screen and (min-width: 512px) {
     flex-direction: row;
     font-size: 1rem;
@@ -88,7 +91,7 @@ const NavToggle = styled.span`
   }
 `
 
-const Nav: React.FunctionComponent<{ open: boolean, currentPath: string }> = ({ open, currentPath }) => {
+const Nav: React.FunctionComponent<{ currentPath: string }> = ({ currentPath }) => {
   const [navOpen, setNavOpen] = useState<boolean>(false)
 
   useEffect(() => {
@@ -105,14 +108,20 @@ const Nav: React.FunctionComponent<{ open: boolean, currentPath: string }> = ({ 
   const toggleOpen = () => { setNavOpen(!navOpen) }
 
   return (
-    <Navigation open={open}>
+    <Navigation>
       <NavToggle onClick={toggleOpen} className={navOpen ? "lnr lnr-cross" : "lnr lnr-menu"} />
       <NavItems navOpen={navOpen}>
         <NavItem active={isPage("/about")} href="/about">About</NavItem>
         <NavItem active={isPage("/projects")} href="/projects">Projects</NavItem>
         <NavItem active={isPage("/writing")} href="writing">Writing</NavItem>
-        <NavItem href="https://www.tinylogger.com/max" target="_blank" rel="nofollow noreferrer">Blog</NavItem>
-        <NavItem href={Resume} target="_blank" rel="noreferrer nofollow">Resume</NavItem>
+        <NavItem href="https://www.tinylogger.com/max" target="_blank" rel="nofollow noreferrer">
+          Blog
+          <span className="lnr lnr-arrow-right"></span>
+        </NavItem>
+        <NavItem href={Resume} target="_blank" rel="noreferrer nofollow">
+          Resume
+          <span className="lnr lnr-arrow-right"></span>
+        </NavItem>
       </NavItems>
     </Navigation>
   );
