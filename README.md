@@ -11,3 +11,7 @@ This is the 3.0 version of [my personal portfolio](www.https://maximpekarsky.com
 * make sure you have Node installed
 * clone the repo and `npm install`
 * `npm start`
+
+## Deploy
+The app builds a static site, which is then deployed on Firebase.
+`npm run deploy` to build and deploy the site.
