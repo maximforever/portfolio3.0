@@ -54,12 +54,10 @@ const NavItems = styled.div<{ navOpen: boolean }>`
   }
 `
 
-const getBorderColor = (darkMode: boolean): string => darkMode ? "var(--orange-alt)" : "var(--orange)";
-
 const NavItem = styled.a<{ active?: boolean }>`
   font-weight: 600;
   margin-bottom: 2rem;
-  border-bottom: 2px solid ${(props) => props.active ? getBorderColor(props.theme.darkMode) : "none"};
+  border-bottom: ${(props) => props.active ? '2px solid var(--orange-alt)' : "none"};
   margin-right: 2rem;
 
   &:hover {
