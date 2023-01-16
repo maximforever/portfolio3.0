@@ -10,15 +10,6 @@ const Navigation = styled.div`
   user-select: none;
   font-size: 0.9rem;
 
-  /* position: absolute;
-  width: 100%;
-  top: 0;
-  left: 0;
-  background: ${({ theme }) => theme.darkMode ?
-    "var(--base-background-color-dark-mode)"
-    :
-    "var(--base-background-color)"}; */
-
   display: flex;
   flex-direction: column;
   align-items: center;
