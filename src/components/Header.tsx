@@ -1,7 +1,7 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import DarkModeToggle from "./DarkModeToggle";
 import React from "react";
-import styled from "styled-components";
+import styled from "styled-components/macro";
 
 const TitleWrapper = styled.div<{open: boolean}>`
   color: color: var(--gray-dark);

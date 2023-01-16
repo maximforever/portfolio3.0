@@ -2,7 +2,7 @@ import { Blurb } from "./Blurb"
 import ProjectList from "./ProjectList"
 import React from "react";
 import { WritingBlurb } from "./StaticTextBlocks";
-import styled from "styled-components";
+import styled from "styled-components/macro";
 import writing from "../writing.json";
 
 const WritingWrapper = styled.div``

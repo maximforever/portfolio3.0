@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled from "styled-components/macro";
 
 const ImageIcon = styled.span<{ open: boolean }>`
   font-size: 1rem;

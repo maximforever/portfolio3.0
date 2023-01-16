@@ -3,7 +3,7 @@ import React from "react";
 import gemfm from '../assets/project_images/gemfm.gif';
 import hackterms from '../assets/project_images/hackterms.gif';
 import maximpekarsky from '../assets/project_images/maximpekarsky.gif';
-import styled from "styled-components";
+import styled from "styled-components/macro";
 import tinylogger from '../assets/project_images/tinylogger.gif';
 import trakr from '../assets/project_images/trakr.gif';
 

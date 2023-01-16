@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import React from "react";
-import styled from "styled-components";
+import styled from "styled-components/macro";
 
 const NotFoundWrapper = styled.div`
   line-height: 1.8;

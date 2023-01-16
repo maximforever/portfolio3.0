@@ -1,6 +1,6 @@
 import { AboutMeText } from "./StaticTextBlocks";
 import React from "react";
-import styled from "styled-components";
+import styled from "styled-components/macro";
 
 const AboutWrapper = styled.div`
   font-size: 0.9rem;

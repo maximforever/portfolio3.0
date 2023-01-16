@@ -3,7 +3,7 @@ import ProjectList from "./ProjectList"
 import { ProjectsBlurb } from "./StaticTextBlocks";
 import React from "react";
 import projects from "../projects.json";
-import styled from "styled-components";
+import styled from "styled-components/macro";
 
 const ProjectsWrapper = styled.div``
 

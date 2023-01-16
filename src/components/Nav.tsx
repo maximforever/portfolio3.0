@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Resume from "../assets/Max_Pekarsky_Resume.pdf"
-import styled from "styled-components";
+import styled from "styled-components/macro";
 
 const Navigation = styled.div`
   line-height: 2;

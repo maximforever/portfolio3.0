@@ -5,7 +5,7 @@ import NotFound from "./NotFound";
 import ProjectsPage from "./ProjectsPage";
 import React from "react";
 import WritingPage from "./WritingPage";
-import styled from "styled-components";
+import styled from "styled-components/macro";
 
 // TODO: this shouldn't bee 400vh; that'll run out when I add more projects, causing the page to cut off
 // this is a subtle, frustrating bug
