@@ -9,7 +9,7 @@ export const AboutMeText = () => (
       I attended the <a href="https://recurse.com" target="_blank" rel="nofollow noreferrer">Recurse Center</a> in 2019 and can&apos;t recommend it enough.
     </p>
     <p>
-      I am comfortable in <em> JavaScript, Ruby, Node.js, Rails, and React</em>, and always enjoy learning new technologies. In addition to my engineering work, I love being involved with my team&apos;s learning and development, developer experience, and hiring process.
+      I work in <em> JavaScript, Ruby, Node.js, Rails, and React</em>, and always enjoy learning new technologies. In addition to my engineering work, I love being involved with my team&apos;s learning and development, developer experience, and hiring process.
     </p>
     <p>
       When I&apos;m not coding for work, I&apos;m always building the next cool thing. My latest projects are <a href="https://www.gem.fm" target="_blank" rel="nofollow noreferrer"> GemFM</a>, a podcast episode recommendation app, <a href="https://www.hackterms.com" target="_blank" rel="nofollow noreferrer"> Hackterms</a>, the Urban Dictionary for programming terms, and <a href="https://www.tinylogger.com" target="_blank" rel="nofollow noreferrer">Tiny Logger</a>, a minimal blogging platform.
