@@ -17,7 +17,7 @@
   {
     "title": "GemFM",
     "link": "https://www.gem.fm",
-    "description": "GemFM is a recommendation engine for great podcast episodes powered by the Spotify and iTunes APIs. Users can rate",
+    "description": "GemFM is a recommendation engine for great podcast episodes powered by the Spotify and iTunes APIs. Users can rate, comment on, and tag episodes.",
     "imageTitle": "gemfm",
     "stack": [
       "Rails",

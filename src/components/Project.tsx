@@ -21,20 +21,29 @@ const Project = styled.div`
 `;
 
 const Title = styled.h3`
-  color: ${({ theme }) => theme.darkMode ? "inherit" : "#b8935f"};
+  color: ${({ theme }) => (theme.darkMode ? "inherit" : "#b49870")};
   font-weight: 600;
-  font-size: 1.2rem;
+  font-size: 1.7rem;
   margin: 0;
-  padding-bottom: 0.5rem;
+  padding-bottom: 1rem;
   font-family: var(--font-sans-serif);
+
+  @media only screen and (min-width: 768px) {
+    font-size: 2rem;
+    padding-bottom: 1.5rem;
+  }
 `;
 
 const Description = styled.p`
-  color: ${({ theme }) => theme.darkMode ? "var(--base-text-color-dark-mode)" : "var(--base-text-color)"};
+  color: ${({ theme }) =>
+    theme.darkMode
+      ? "var(--base-text-color-dark-mode)"
+      : "var(--base-text-color)"};
   margin: 0;
-  padding-bottom: 0.5rem;
+  padding-bottom: 1.5rem;
   line-height: 1.8;
-  font-size: 0.9rem;
+  font-size: 1rem;
+  font-weight: 400;
 
   @media only screen and (min-width: 768px) {
     font-size: 1rem;
@@ -47,7 +56,7 @@ const Info = styled.div`
   }
 `;
 
-const Visual = styled.img < { imagePath: string } >`
+const Visual = styled.img<{ imagePath: string }>`
   margin-bottom: 1rem;
   display: block;
   border-radius: 0.5rem;g
@@ -59,7 +68,7 @@ const Visual = styled.img < { imagePath: string } >`
 
   // this is not a pretty way to get the image path, but it does work dynamically...
   background-color: black;
-  background: ${(props) => `url("${props.imagePath}") no-repeat center center` };
+  background: ${(props) => `url("${props.imagePath}") no-repeat center center`};
   background-size: contain;
 
   @media only screen and (min-width: 768px) {
@@ -74,34 +83,38 @@ const Visual = styled.img < { imagePath: string } >`
 `;
 
 const Tag = styled.div`
-  color: ${(props) => props.theme.darkMode ? "var(--orange-alt)" : "inherit"};
-  background: ${(props) => props.theme.darkMode ? "#1e3843" : "#ecdecb"};
+  color: ${(props) => (props.theme.darkMode ? "var(--orange-alt)" : "#948572")};
+  background: ${(props) => (props.theme.darkMode ? "#1e3843" : "#f6efe5")};
   display: block;
   font-family: var(--font-monospace);
   font-weight: 500;
-  border-radius: 0.3rem;
-  padding: 0rem 0.6rem;
-  margin-right: 0.8rem;
-  margin-bottom: 0.4rem;
+  border-radius: 0.8rem;
+  padding: 0.3rem 0.9rem;
+  margin-right: 1rem;
+  margin-bottom: 0.8rem;
   font-size: 0.8rem;
 
   @media only screen and (min-width: 768px) {
-    font-size: 0.9rem;
+    padding: 0.2rem 0.8rem;
   }
-`
+`;
 
 const TagWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-`
+`;
 
-const Nav: React.FunctionComponent<{ project: ProjectInterface }> = ({ project }) => {
-  const renderStack = () => {
+const Nav: React.FunctionComponent<{ project: ProjectInterface }> = ({
+  project,
+}) => {
+  const renderTags = () => {
     // writing projects don't have a stack
-    if (project.stack === undefined) { return null }
+    if (project.stack === undefined) {
+      return null;
+    }
 
-    return project.stack.map((tech, index) => <Tag key={index}>{tech}</Tag>)
-  }
+    return project.stack.map((tech, index) => <Tag key={index}>{tech}</Tag>);
+  };
 
   const imagesPaths: { [key: string]: string } = {
     hackterms: hackterms,
@@ -109,19 +122,22 @@ const Nav: React.FunctionComponent<{ project: ProjectInterface }> = ({ project }
     tinylogger: tinylogger,
     trakr: trakr,
     maximpekarsky: maximpekarsky,
-  }
+  };
 
   return (
-    <Project>
-      {project.imageTitle && <Visual imagePath={imagesPaths[project.imageTitle]} />}
-      <Info>
-        <a href={project.link} target="_blank" rel="noopener noreferrer">
-          <Title>{project.title}</Title>
-        </a>
-        <Description>{project.description}</Description>
-        <TagWrapper>{renderStack()}</TagWrapper>
-      </Info>
-    </Project>
+    <>
+      <Title>{project.title}</Title>
+      <Project>
+        {project.imageTitle && (
+          <Visual imagePath={imagesPaths[project.imageTitle]} />
+        )}
+        <Info>
+          <a href={project.link} target="_blank" rel="noopener noreferrer"></a>
+          <Description>{project.description}</Description>
+          <TagWrapper>{renderTags()}</TagWrapper>
+        </Info>
+      </Project>
+    </>
   );
 };
 
